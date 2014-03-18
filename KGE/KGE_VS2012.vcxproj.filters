@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Core">
+      <UniqueIdentifier>{4c87f32f-c4b3-4c8a-998d-3c64037f9f56}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Data">
+      <UniqueIdentifier>{ad232e65-ab29-4796-b75f-09a6040ea606}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="KGE.cpp" />
+    <ClCompile Include="core\data\Data.cpp">
+      <Filter>Core\Data</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="KGE.hpp" />
+    <ClInclude Include="core\data\Data.hpp">
+      <Filter>Core\Data</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Data\GUID.hpp">
+      <Filter>Core\Data</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Data\Hash.hpp">
+      <Filter>Core\Data</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
