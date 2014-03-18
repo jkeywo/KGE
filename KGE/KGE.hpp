@@ -79,11 +79,15 @@ typedef short s16;
 typedef char s8;
 
 // helper macros
-#define foreach( iterator, collection ) for( auto iterator(collection.begin()); iterator != collection.end(); iterator++ )
-#define foreach_r( iterator, collection ) for( auto iterator(collection.rbegin()); iterator != collection.rend(); iterator++ )
+#define FOREACH( iterator, collection ) for( auto iterator(collection.begin()); iterator != collection.end(); iterator++ )
+#define FOREACH_R( iterator, collection ) for( auto iterator(collection.rbegin()); iterator != collection.rend(); iterator++ )
 
-#define combine2(a, b) a##b
-#define combine(a, b) combine2(a,b)
+#define COMBINE2(a, b) a##b
+#define COMBINE(a, b) COMBINE2(a,b)
+
+#define STATIC_INITIALISE_START			private: static struct StaticInitialise { StaticInitialise()
+#define STATIC_INITIALISE_END			} s_xStaticInitialise;
+#define STATIC_INITIALISE_RUN( TParentClass )	TParentClass::StaticInitialise TParentClass::s_xStaticInitialise;
 
 // Core classes
 #include "Core/Data/Hash.hpp"

@@ -83,14 +83,20 @@
       <OptimizeReferences>true</OptimizeReferences>
       <AdditionalLibraryDirectories>$(SolutionDir)..\Lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>lua5.1.lib;;Box2D.lib;sfml-audio-s.lib;sfml-graphics-s.lib;sfml-system-s.lib;sfml-window-s.lib;%(AdditionalDependencies)</AdditionalDependencies>
-  </Link>
+    </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\Core\ClassCapabilities\ClassFactory.cpp" />
     <ClCompile Include="..\Core\Data\Data.cpp" />
     <ClCompile Include="..\KGE.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\Core\ClassCapabilities\ClassFactory.hpp" />
+    <ClInclude Include="..\Core\ClassCapabilities\ClassFactory_AddDefinition.hpp" />
+    <ClInclude Include="..\Core\ClassCapabilities\ClassFactory_AddRoot.hpp" />
     <ClInclude Include="..\Core\Data\Data.hpp" />
+    <ClInclude Include="..\Core\Data\GUID.hpp" />
+    <ClInclude Include="..\Core\Data\Hash.hpp" />
     <ClInclude Include="..\KGE.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

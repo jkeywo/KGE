@@ -5,11 +5,23 @@
     <ClCompile Include="..\Core\Data\Data.cpp">
       <Filter>Core\Data</Filter>
     </ClCompile>
+    <ClCompile Include="..\Core\ClassCapabilities\ClassFactory.cpp">
+      <Filter>Core\ClassCapabilities</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\KGE.hpp" />
-    <ClInclude Include="..\Data.hpp">
+    <ClInclude Include="..\Core\Data\Data.hpp">
       <Filter>Core\Data</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Core\ClassCapabilities\ClassFactory.hpp">
+      <Filter>Core\ClassCapabilities</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Core\ClassCapabilities\ClassFactory_AddDefinition.hpp">
+      <Filter>Core\ClassCapabilities</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Core\ClassCapabilities\ClassFactory_AddRoot.hpp">
+      <Filter>Core\ClassCapabilities</Filter>
     </ClInclude>
     <ClInclude Include="..\Core\Data\GUID.hpp">
       <Filter>Core\Data</Filter>
@@ -24,6 +36,9 @@
     </Filter>
     <Filter Include="Core\Data">
       <UniqueIdentifier>{4baa4b55-59b7-457e-8882-abecb60ff80d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\ClassCapabilities">
+      <UniqueIdentifier>{6b1510fe-5ab4-426d-a179-0df3eea29fab}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
