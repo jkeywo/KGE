@@ -9,20 +9,20 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="KGE.cpp" />
-    <ClCompile Include="core\data\Data.cpp">
+    <ClCompile Include="..\KGE.cpp" />
+    <ClCompile Include="..\Core\Data\Data.cpp">
       <Filter>Core\Data</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="KGE.hpp" />
-    <ClInclude Include="core\data\Data.hpp">
+    <ClInclude Include="..\KGE.hpp" />
+    <ClInclude Include="..\Core\Data\Data.hpp">
       <Filter>Core\Data</Filter>
     </ClInclude>
-    <ClInclude Include="Core\Data\GUID.hpp">
+    <ClInclude Include="..\Core\Data\GUID.hpp">
       <Filter>Core\Data</Filter>
     </ClInclude>
-    <ClInclude Include="Core\Data\Hash.hpp">
+    <ClInclude Include="..\Core\Data\Hash.hpp">
       <Filter>Core\Data</Filter>
     </ClInclude>
   </ItemGroup>

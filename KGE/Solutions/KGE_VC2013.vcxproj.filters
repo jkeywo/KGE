@@ -1,14 +1,20 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="G:\Users\John\Documents\KGE\KGE\KGE.cpp" />
-    <ClCompile Include="G:\Users\John\Documents\KGE\KGE\Core\Data\Data.cpp">
+    <ClCompile Include="..\KGE.cpp" />
+    <ClCompile Include="..\Core\Data\Data.cpp">
       <Filter>Core\Data</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="G:\Users\John\Documents\KGE\KGE\KGE.hpp" />
-    <ClInclude Include="G:\Users\John\Documents\KGE\KGE\Core\Data\Data.hpp">
+    <ClInclude Include="..\KGE.hpp" />
+    <ClInclude Include="..\Data.hpp">
+      <Filter>Core\Data</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Core\Data\GUID.hpp">
+      <Filter>Core\Data</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Core\Data\Hash.hpp">
       <Filter>Core\Data</Filter>
     </ClInclude>
   </ItemGroup>
