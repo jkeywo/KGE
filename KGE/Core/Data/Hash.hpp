@@ -52,6 +52,15 @@ namespace KGE
 		bool operator!=(const Hash& b) const { return m_uHash != b.m_uHash; }
 		bool operator<(const Hash& b) const { return m_uHash < b.m_uHash; }
 		Hash operator+(const string& b) const { Hash xRet(*this); xRet += b; return xRet; }
+		template<typename IN_T> Hash& operator<<(const IN_T& xIn)
+		{
+			for (int i = 0; i < sizeof(IN_T); i++)
+			{
+				ConcatenateHash(static_cast<char*>(&xIn)[i]);
+			}
+			DEBUG_CLEAR_STRING
+			return *this;
+		}
 
 		unsigned int GetHash() const { return m_uHash; }
 
@@ -66,17 +75,23 @@ namespace KGE
 		}
 		void ConcatenateHash(const std::string& szHashString)
 		{
-			int c, i = 0;
+			char c;
+			int i = 0;
 			while(c = szHashString[i++])
 			{
-				m_uHash = ((m_uHash << 5) + m_uHash) + c;
+				ConcatenateHash(c);
 			}
+		}
+		void ConcatenateHash(char cChar)
+		{
+			m_uHash = ((m_uHash << 5) + m_uHash) + cChar;
 		}
 		unsigned int m_uHash;
 #ifdef _DEBUG
 		string m_szHashString;
 #endif
 	};
+
 };
 
 // clean up our defines
