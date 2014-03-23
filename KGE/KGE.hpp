@@ -91,5 +91,5 @@ typedef char s8;
 
 // Core classes
 #include "Core/Data/Hash.hpp"
-#include "Core/Data/GUID.hpp"
+#include "Core/Data/TUID.hpp"
 #include "Core/Data/Data.hpp"
