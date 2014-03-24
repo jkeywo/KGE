@@ -85,6 +85,10 @@ typedef char s8;
 #define COMBINE2(a, b) a##b
 #define COMBINE(a, b) COMBINE2(a,b)
 
+#define STATIC_INITIALISE_START			private: static struct StaticInitialise { StaticInitialise()
+#define STATIC_INITIALISE_END			} s_xStaticInitialise;
+#define STATIC_INITIALISE_RUN( TParentClass )	TParentClass::StaticInitialise TParentClass::s_xStaticInitialise;
+
 // Core classes
 #include "Core/Data/Hash.hpp"
 #include "Core/Data/TUID.hpp"
