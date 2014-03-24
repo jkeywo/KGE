@@ -80,13 +80,64 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\Core\AI\ComponentState.cpp" />
+    <ClCompile Include="..\Core\AI\ComponentStateMachine.cpp" />
+    <ClCompile Include="..\Core\Audio\ComponentAudioClip.cpp" />
+    <ClCompile Include="..\Core\Audio\ComponentMusic.cpp" />
+    <ClCompile Include="..\Core\ClassCapabilities\ClassFactory.cpp" />
+    <ClCompile Include="..\Core\ClassCapabilities\Properties.cpp" />
+    <ClCompile Include="..\Core\ClassCapabilities\XMLParser.cpp" />
+    <ClCompile Include="..\Core\Components\Basic\ComponentCameraLayer.cpp" />
+    <ClCompile Include="..\Core\Components\Basic\ComponentGame.cpp" />
+    <ClCompile Include="..\Core\Components\Basic\ComponentLayer.cpp" />
+    <ClCompile Include="..\Core\Components\Basic\ComponentPanelLayer.cpp" />
+    <ClCompile Include="..\Core\Components\Basic\ComponentUpdater.cpp" />
+    <ClCompile Include="..\Core\Components\Basic\ComponentWindowLayer.cpp" />
+    <ClCompile Include="..\Core\Components\Component.cpp" />
+    <ClCompile Include="..\Core\Components\ComponentCollection.cpp" />
+    <ClCompile Include="..\Core\Components\ComponentComposite.cpp" />
+    <ClCompile Include="..\Core\Components\Signal.cpp" />
     <ClCompile Include="..\Core\Data\Data.cpp" />
+    <ClCompile Include="..\Core\Graphics\ComponentSprite.cpp" />
+    <ClCompile Include="..\Core\Graphics\Sprite.cpp" />
+    <ClCompile Include="..\Core\Interface\ComponentButton.cpp" />
+    <ClCompile Include="..\Core\Resources\AudioManager.cpp" />
+    <ClCompile Include="..\Core\Resources\FontManager.cpp" />
+    <ClCompile Include="..\Core\Resources\TextureManager.cpp" />
     <ClCompile Include="..\KGE.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\Core\AI\ComponentState.hpp" />
+    <ClInclude Include="..\Core\AI\ComponentStateMachine.hpp" />
+    <ClInclude Include="..\Core\Audio\ComponentAudioClip.hpp" />
+    <ClInclude Include="..\Core\Audio\ComponentMusic.hpp" />
+    <ClInclude Include="..\Core\ClassCapabilities\ClassFactory.hpp" />
+    <ClInclude Include="..\Core\ClassCapabilities\ClassFactory_AddDefinition.hpp" />
+    <ClInclude Include="..\Core\ClassCapabilities\ClassFactory_AddRoot.hpp" />
+    <ClInclude Include="..\Core\ClassCapabilities\MetaClass_AddDefinition.hpp" />
+    <ClInclude Include="..\Core\ClassCapabilities\MetaClass_AddRoot.hpp" />
+    <ClInclude Include="..\Core\ClassCapabilities\Properties.h" />
+    <ClInclude Include="..\Core\ClassCapabilities\Properties_Add.h" />
+    <ClInclude Include="..\Core\ClassCapabilities\XMLParser.h" />
+    <ClInclude Include="..\Core\Components\Basic\ComponentCameraLayer.hpp" />
+    <ClInclude Include="..\Core\Components\Basic\ComponentGame.hpp" />
+    <ClInclude Include="..\Core\Components\Basic\ComponentLayer.hpp" />
+    <ClInclude Include="..\Core\Components\Basic\ComponentPanelLayer.hpp" />
+    <ClInclude Include="..\Core\Components\Basic\ComponentUpdater.hpp" />
+    <ClInclude Include="..\Core\Components\Basic\ComponentWindowLayer.hpp" />
+    <ClInclude Include="..\Core\Components\Component.hpp" />
+    <ClInclude Include="..\Core\Components\ComponentCollection.hpp" />
+    <ClInclude Include="..\Core\Components\ComponentComposite.hpp" />
+    <ClInclude Include="..\Core\Components\Signal.hpp" />
     <ClInclude Include="..\Core\Data\Data.hpp" />
-    <ClInclude Include="..\Core\Data\GUID.hpp" />
     <ClInclude Include="..\Core\Data\Hash.hpp" />
+    <ClInclude Include="..\Core\Data\TUID.hpp" />
+    <ClInclude Include="..\Core\Graphics\ComponentSprite.hpp" />
+    <ClInclude Include="..\Core\Graphics\Sprite.hpp" />
+    <ClInclude Include="..\Core\Interface\ComponentButton.hpp" />
+    <ClInclude Include="..\Core\Resources\AudioManager.hpp" />
+    <ClInclude Include="..\Core\Resources\FontManager.hpp" />
+    <ClInclude Include="..\Core\Resources\TextureManager.hpp" />
     <ClInclude Include="..\KGE.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
