@@ -13,8 +13,9 @@ namespace KGE
 		// Static system for TUID management and lists
 		struct Manager
 		{
+			Manager() : NextTUID(UNSET + 1) {}
 			std::map<u_int, TUID*> TUIDReferences;
-			u_int NextTUID = UNSET + 1;
+			u_int NextTUID;
 		};
 		static Manager& GetManager()	{ static Manager xInstance; return(xInstance); }
 
