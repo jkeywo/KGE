@@ -7,11 +7,107 @@
     <Filter Include="Core\Data">
       <UniqueIdentifier>{ad232e65-ab29-4796-b75f-09a6040ea606}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Core\AI">
+      <UniqueIdentifier>{967e33f9-f363-4629-ad35-b785c75cad40}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Audio">
+      <UniqueIdentifier>{cec505eb-4ba7-48c2-a410-b3f2c8336461}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\ClassCapabilities">
+      <UniqueIdentifier>{a9bc90e7-3278-4e26-8be7-aadbbc399d16}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Components">
+      <UniqueIdentifier>{a9e85c02-dff2-407e-85ba-89ba2b4c6bf3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Components\Basic">
+      <UniqueIdentifier>{40fe72e4-9058-4738-b858-27a854c24b63}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Graphics">
+      <UniqueIdentifier>{f5166938-ec25-4fca-90fb-5dd7c5457795}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Interface">
+      <UniqueIdentifier>{92d49cac-41bd-4378-a95a-31379f3a2c05}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Resources">
+      <UniqueIdentifier>{d65e7145-a0e2-42ef-9cd2-de2a19d08452}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\KGE.cpp" />
     <ClCompile Include="..\Core\Data\Data.cpp">
       <Filter>Core\Data</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Core\AI\ComponentStateMachine.cpp">
+      <Filter>Core\AI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Core\AI\ComponentState.cpp">
+      <Filter>Core\AI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Core\Audio\ComponentMusic.cpp">
+      <Filter>Core\Audio</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Core\Audio\ComponentAudioClip.cpp">
+      <Filter>Core\Audio</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Core\ClassCapabilities\Properties.cpp">
+      <Filter>Core\ClassCapabilities</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Core\ClassCapabilities\XMLParser.cpp">
+      <Filter>Core\ClassCapabilities</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Core\ClassCapabilities\ClassFactory.cpp">
+      <Filter>Core\ClassCapabilities</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Core\Components\Component.cpp">
+      <Filter>Core\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Core\Components\ComponentCollection.cpp">
+      <Filter>Core\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Core\Components\ComponentComposite.cpp">
+      <Filter>Core\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Core\Components\Signal.cpp">
+      <Filter>Core\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Core\Components\Basic\ComponentLayer.cpp">
+      <Filter>Core\Components\Basic</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Core\Components\Basic\ComponentPanelLayer.cpp">
+      <Filter>Core\Components\Basic</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Core\Components\Basic\ComponentUpdater.cpp">
+      <Filter>Core\Components\Basic</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Core\Components\Basic\ComponentWindowLayer.cpp">
+      <Filter>Core\Components\Basic</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Core\Components\Basic\ComponentCameraLayer.cpp">
+      <Filter>Core\Components\Basic</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Core\Components\Basic\ComponentGame.cpp">
+      <Filter>Core\Components\Basic</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Core\Graphics\Sprite.cpp">
+      <Filter>Core\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Core\Graphics\ComponentSprite.cpp">
+      <Filter>Core\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Core\Interface\ComponentButton.cpp">
+      <Filter>Core\Interface</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Core\Resources\FontManager.cpp">
+      <Filter>Core\Resources</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Core\Resources\TextureManager.cpp">
+      <Filter>Core\Resources</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Core\Resources\AudioManager.cpp">
+      <Filter>Core\Resources</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Core\ClassCapabilities\Events.cpp">
+      <Filter>Core\ClassCapabilities</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -19,11 +115,92 @@
     <ClInclude Include="..\Core\Data\Data.hpp">
       <Filter>Core\Data</Filter>
     </ClInclude>
-    <ClInclude Include="..\Core\Data\GUID.hpp">
-      <Filter>Core\Data</Filter>
-    </ClInclude>
     <ClInclude Include="..\Core\Data\Hash.hpp">
       <Filter>Core\Data</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Core\AI\ComponentStateMachine.hpp">
+      <Filter>Core\AI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Core\AI\ComponentState.hpp">
+      <Filter>Core\AI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Core\Audio\ComponentMusic.hpp">
+      <Filter>Core\Audio</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Core\Audio\ComponentAudioClip.hpp">
+      <Filter>Core\Audio</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Core\ClassCapabilities\MetaClass_AddDefinition.hpp">
+      <Filter>Core\ClassCapabilities</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Core\ClassCapabilities\MetaClass_AddRoot.hpp">
+      <Filter>Core\ClassCapabilities</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Core\ClassCapabilities\ClassFactory.hpp">
+      <Filter>Core\ClassCapabilities</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Core\Components\Signal.hpp">
+      <Filter>Core\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Core\Components\Component.hpp">
+      <Filter>Core\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Core\Components\ComponentCollection.hpp">
+      <Filter>Core\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Core\Components\ComponentComposite.hpp">
+      <Filter>Core\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Core\Components\Basic\ComponentLayer.hpp">
+      <Filter>Core\Components\Basic</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Core\Components\Basic\ComponentPanelLayer.hpp">
+      <Filter>Core\Components\Basic</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Core\Components\Basic\ComponentUpdater.hpp">
+      <Filter>Core\Components\Basic</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Core\Components\Basic\ComponentWindowLayer.hpp">
+      <Filter>Core\Components\Basic</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Core\Components\Basic\ComponentCameraLayer.hpp">
+      <Filter>Core\Components\Basic</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Core\Components\Basic\ComponentGame.hpp">
+      <Filter>Core\Components\Basic</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Core\Data\TUID.hpp">
+      <Filter>Core\Data</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Core\Graphics\ComponentSprite.hpp">
+      <Filter>Core\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Core\Graphics\Sprite.hpp">
+      <Filter>Core\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Core\Interface\ComponentButton.hpp">
+      <Filter>Core\Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Core\Resources\FontManager.hpp">
+      <Filter>Core\Resources</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Core\Resources\TextureManager.hpp">
+      <Filter>Core\Resources</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Core\Resources\AudioManager.hpp">
+      <Filter>Core\Resources</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Core\ClassCapabilities\Events.hpp">
+      <Filter>Core\ClassCapabilities</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Core\ClassCapabilities\XMLParser.hpp">
+      <Filter>Core\ClassCapabilities</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Core\ClassCapabilities\Properties_Add.hpp">
+      <Filter>Core\ClassCapabilities</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Core\ClassCapabilities\Properties.hpp">
+      <Filter>Core\ClassCapabilities</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
