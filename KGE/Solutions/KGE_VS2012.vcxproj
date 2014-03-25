@@ -91,6 +91,7 @@
     <ClCompile Include="..\Core\Audio\ComponentAudioClip.cpp" />
     <ClCompile Include="..\Core\Audio\ComponentMusic.cpp" />
     <ClCompile Include="..\Core\ClassCapabilities\ClassFactory.cpp" />
+    <ClCompile Include="..\Core\ClassCapabilities\Events.cpp" />
     <ClCompile Include="..\Core\ClassCapabilities\Properties.cpp" />
     <ClCompile Include="..\Core\ClassCapabilities\XMLParser.cpp" />
     <ClCompile Include="..\Core\Components\Basic\ComponentCameraLayer.cpp" />
@@ -118,13 +119,11 @@
     <ClInclude Include="..\Core\Audio\ComponentAudioClip.hpp" />
     <ClInclude Include="..\Core\Audio\ComponentMusic.hpp" />
     <ClInclude Include="..\Core\ClassCapabilities\ClassFactory.hpp" />
-    <ClInclude Include="..\Core\ClassCapabilities\ClassFactory_AddDefinition.hpp" />
-    <ClInclude Include="..\Core\ClassCapabilities\ClassFactory_AddRoot.hpp" />
+    <ClInclude Include="..\Core\ClassCapabilities\Events.hpp" />
     <ClInclude Include="..\Core\ClassCapabilities\MetaClass_AddDefinition.hpp" />
     <ClInclude Include="..\Core\ClassCapabilities\MetaClass_AddRoot.hpp" />
-    <ClInclude Include="..\Core\ClassCapabilities\Properties.h" />
-    <ClInclude Include="..\Core\ClassCapabilities\Properties_Add.h" />
-    <ClInclude Include="..\Core\ClassCapabilities\XMLParser.h" />
+    <ClInclude Include="..\Core\ClassCapabilities\Properties.hpp" />
+    <ClInclude Include="..\Core\ClassCapabilities\XMLParser.hpp" />
     <ClInclude Include="..\Core\Components\Basic\ComponentCameraLayer.hpp" />
     <ClInclude Include="..\Core\Components\Basic\ComponentGame.hpp" />
     <ClInclude Include="..\Core\Components\Basic\ComponentLayer.hpp" />

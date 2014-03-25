@@ -106,6 +106,9 @@
     <ClCompile Include="..\Core\Resources\AudioManager.cpp">
       <Filter>Core\Resources</Filter>
     </ClCompile>
+    <ClCompile Include="..\Core\ClassCapabilities\Events.cpp">
+      <Filter>Core\ClassCapabilities</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\KGE.hpp" />
@@ -127,25 +130,10 @@
     <ClInclude Include="..\Core\Audio\ComponentAudioClip.hpp">
       <Filter>Core\Audio</Filter>
     </ClInclude>
-    <ClInclude Include="..\Core\ClassCapabilities\ClassFactory_AddDefinition.hpp">
-      <Filter>Core\ClassCapabilities</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Core\ClassCapabilities\ClassFactory_AddRoot.hpp">
-      <Filter>Core\ClassCapabilities</Filter>
-    </ClInclude>
     <ClInclude Include="..\Core\ClassCapabilities\MetaClass_AddDefinition.hpp">
       <Filter>Core\ClassCapabilities</Filter>
     </ClInclude>
     <ClInclude Include="..\Core\ClassCapabilities\MetaClass_AddRoot.hpp">
-      <Filter>Core\ClassCapabilities</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Core\ClassCapabilities\Properties.h">
-      <Filter>Core\ClassCapabilities</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Core\ClassCapabilities\Properties_Add.h">
-      <Filter>Core\ClassCapabilities</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Core\ClassCapabilities\XMLParser.h">
       <Filter>Core\ClassCapabilities</Filter>
     </ClInclude>
     <ClInclude Include="..\Core\ClassCapabilities\ClassFactory.hpp">
@@ -201,6 +189,18 @@
     </ClInclude>
     <ClInclude Include="..\Core\Resources\AudioManager.hpp">
       <Filter>Core\Resources</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Core\ClassCapabilities\Events.hpp">
+      <Filter>Core\ClassCapabilities</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Core\ClassCapabilities\XMLParser.hpp">
+      <Filter>Core\ClassCapabilities</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Core\ClassCapabilities\Properties_Add.hpp">
+      <Filter>Core\ClassCapabilities</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Core\ClassCapabilities\Properties.hpp">
+      <Filter>Core\ClassCapabilities</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
