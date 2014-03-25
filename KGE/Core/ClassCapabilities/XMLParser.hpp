@@ -1,6 +1,6 @@
 #pragma once
 
-#define CAPABILIITYROOT_PROCESSXML													\
+#define CAPABILITYROOT_PROCESSXML													\
 public:																				\
 	virtual void ProcessXML(const xml_node<char>& xNode)							\
 	{																				\
@@ -15,7 +15,7 @@ protected:																			\
 	virtual void Internal_ProcessXMLChildNodes(const xml_node<char>& xNode) {}		\
 	virtual void Internal_PostChildNodeProcessXML(const xml_node<char>& xNode) {}
 
-#define CAPABILITY_XMLPARSER														\
+#define CAPABILITY_PROCESSXML														\
 private:																			\
 	typedef KGE::XMLParser<root_t, parent_t, this_t> xmlparser_t;					\
 public:																				\
@@ -82,7 +82,7 @@ namespace KGE
 			xml_attribute<char>* pxCurrentAttribute = xNode.first_attribute();
 			while (pxCurrentAttribute != NULL)
 			{
-				ash xType = Hash(pxCurrentAttribute->name());
+				Hash xType = Hash(pxCurrentAttribute->name());
 				AttributeCollection::const_iterator xIt = m_xAtributes.find(xType);
 				if (xIt != m_xAtributes.end())
 				{

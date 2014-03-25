@@ -74,6 +74,9 @@
     <ClCompile Include="..\Core\Interface\ComponentButton.cpp">
       <Filter>Core\Interface</Filter>
     </ClCompile>
+    <ClCompile Include="..\Core\ClassCapabilities\Events.cpp">
+      <Filter>Core\ClassCapabilities</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\KGE.hpp" />
@@ -83,32 +86,11 @@
     <ClInclude Include="..\Core\ClassCapabilities\ClassFactory.hpp">
       <Filter>Core\ClassCapabilities</Filter>
     </ClInclude>
-    <ClInclude Include="..\Core\ClassCapabilities\ClassFactory_AddDefinition.hpp">
-      <Filter>Core\ClassCapabilities</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Core\ClassCapabilities\ClassFactory_AddRoot.hpp">
-      <Filter>Core\ClassCapabilities</Filter>
-    </ClInclude>
     <ClInclude Include="..\Core\Data\Hash.hpp">
       <Filter>Core\Data</Filter>
     </ClInclude>
     <ClInclude Include="..\Core\Data\TUID.hpp">
       <Filter>Core\Data</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Core\ClassCapabilities\Properties.h">
-      <Filter>Core\ClassCapabilities</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Core\ClassCapabilities\Properties_Add.h">
-      <Filter>Core\ClassCapabilities</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Core\ClassCapabilities\MetaClass_AddDefinition.hpp">
-      <Filter>Core\ClassCapabilities</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Core\ClassCapabilities\MetaClass_AddRoot.hpp">
-      <Filter>Core\ClassCapabilities</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Core\ClassCapabilities\XMLParser.h">
-      <Filter>Core\ClassCapabilities</Filter>
     </ClInclude>
     <ClInclude Include="..\Core\Components\Basic\ComponentCameraLayer.hpp">
       <Filter>Core\Components\Basic</Filter>
@@ -169,6 +151,30 @@
     </ClInclude>
     <ClInclude Include="..\Core\Resources\TextureManager.hpp">
       <Filter>Core\Resources</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Core\ClassCapabilities\Events.hpp">
+      <Filter>Core\ClassCapabilities</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Core\ClassCapabilities\Properties.hpp">
+      <Filter>Core\ClassCapabilities</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Core\ClassCapabilities\XMLParser.hpp">
+      <Filter>Core\ClassCapabilities</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Core\Components\Component_Include.hpp">
+      <Filter>Core\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Core\ClassCapabilities\MetaClass_IncludeRoot.hpp">
+      <Filter>Core\ClassCapabilities</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Core\ClassCapabilities\MetaClass_Include.hpp">
+      <Filter>Core\ClassCapabilities</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Core\ClassCapabilities\Properties_IncludeRoot.hpp">
+      <Filter>Core\ClassCapabilities</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Core\ClassCapabilities\Events_IncludeRoot.hpp">
+      <Filter>Core\ClassCapabilities</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

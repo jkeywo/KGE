@@ -3,4 +3,6 @@
 
 namespace KGE
 {
+	STATIC_INITIALISE_RUN(ComponentComposite);
+
 };
