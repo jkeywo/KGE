@@ -49,15 +49,6 @@
     <ClCompile Include="..\Core\Audio\ComponentAudioClip.cpp">
       <Filter>Core\Audio</Filter>
     </ClCompile>
-    <ClCompile Include="..\Core\ClassCapabilities\Properties.cpp">
-      <Filter>Core\ClassCapabilities</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Core\ClassCapabilities\XMLParser.cpp">
-      <Filter>Core\ClassCapabilities</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Core\ClassCapabilities\ClassFactory.cpp">
-      <Filter>Core\ClassCapabilities</Filter>
-    </ClCompile>
     <ClCompile Include="..\Core\Components\Component.cpp">
       <Filter>Core\Components</Filter>
     </ClCompile>
@@ -106,6 +97,15 @@
     <ClCompile Include="..\Core\Resources\AudioManager.cpp">
       <Filter>Core\Resources</Filter>
     </ClCompile>
+    <ClCompile Include="..\Core\ClassCapabilities\Properties.cpp">
+      <Filter>Core\ClassCapabilities</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Core\ClassCapabilities\XMLParser.cpp">
+      <Filter>Core\ClassCapabilities</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Core\ClassCapabilities\ClassFactory.cpp">
+      <Filter>Core\ClassCapabilities</Filter>
+    </ClCompile>
     <ClCompile Include="..\Core\ClassCapabilities\Events.cpp">
       <Filter>Core\ClassCapabilities</Filter>
     </ClCompile>
@@ -129,15 +129,6 @@
     </ClInclude>
     <ClInclude Include="..\Core\Audio\ComponentAudioClip.hpp">
       <Filter>Core\Audio</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Core\ClassCapabilities\MetaClass_AddDefinition.hpp">
-      <Filter>Core\ClassCapabilities</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Core\ClassCapabilities\MetaClass_AddRoot.hpp">
-      <Filter>Core\ClassCapabilities</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Core\ClassCapabilities\ClassFactory.hpp">
-      <Filter>Core\ClassCapabilities</Filter>
     </ClInclude>
     <ClInclude Include="..\Core\Components\Signal.hpp">
       <Filter>Core\Components</Filter>
@@ -190,17 +181,32 @@
     <ClInclude Include="..\Core\Resources\AudioManager.hpp">
       <Filter>Core\Resources</Filter>
     </ClInclude>
-    <ClInclude Include="..\Core\ClassCapabilities\Events.hpp">
+    <ClInclude Include="..\Core\ClassCapabilities\MetaClass_Include.hpp">
+      <Filter>Core\ClassCapabilities</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Core\ClassCapabilities\MetaClass_IncludeRoot.hpp">
+      <Filter>Core\ClassCapabilities</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Core\ClassCapabilities\Properties.hpp">
+      <Filter>Core\ClassCapabilities</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Core\ClassCapabilities\Properties_IncludeRoot.hpp">
       <Filter>Core\ClassCapabilities</Filter>
     </ClInclude>
     <ClInclude Include="..\Core\ClassCapabilities\XMLParser.hpp">
       <Filter>Core\ClassCapabilities</Filter>
     </ClInclude>
-    <ClInclude Include="..\Core\ClassCapabilities\Properties_Add.hpp">
+    <ClInclude Include="..\Core\ClassCapabilities\ClassFactory.hpp">
       <Filter>Core\ClassCapabilities</Filter>
     </ClInclude>
-    <ClInclude Include="..\Core\ClassCapabilities\Properties.hpp">
+    <ClInclude Include="..\Core\ClassCapabilities\Events.hpp">
       <Filter>Core\ClassCapabilities</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Core\ClassCapabilities\Events_IncludeRoot.hpp">
+      <Filter>Core\ClassCapabilities</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Core\Components\Component_Include.hpp">
+      <Filter>Core\Components</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

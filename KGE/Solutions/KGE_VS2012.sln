@@ -5,14 +5,32 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "KGE_VS2012", "KGE_VS2012.vc
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
-		Debug|Win32 = Debug|Win32
-		Release|Win32 = Release|Win32
+		_Debug|Win32 = _Debug|Win32
+		_Debug|x64 = _Debug|x64
+		_QA|Win32 = _QA|Win32
+		_QA|x64 = _QA|x64
+		_Release|Win32 = _Release|Win32
+		_Release|x64 = _Release|x64
+		_Tools|Win32 = _Tools|Win32
+		_Tools|x64 = _Tools|x64
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{9AFA02E9-69F7-4411-8BFF-6DF105465A0C}.Debug|Win32.ActiveCfg = Debug|Win32
-		{9AFA02E9-69F7-4411-8BFF-6DF105465A0C}.Debug|Win32.Build.0 = Debug|Win32
-		{9AFA02E9-69F7-4411-8BFF-6DF105465A0C}.Release|Win32.ActiveCfg = Release|Win32
-		{9AFA02E9-69F7-4411-8BFF-6DF105465A0C}.Release|Win32.Build.0 = Release|Win32
+		{9AFA02E9-69F7-4411-8BFF-6DF105465A0C}._Debug|Win32.ActiveCfg = _Debug|Win32
+		{9AFA02E9-69F7-4411-8BFF-6DF105465A0C}._Debug|Win32.Build.0 = _Debug|Win32
+		{9AFA02E9-69F7-4411-8BFF-6DF105465A0C}._Debug|x64.ActiveCfg = _Debug|x64
+		{9AFA02E9-69F7-4411-8BFF-6DF105465A0C}._Debug|x64.Build.0 = _Debug|x64
+		{9AFA02E9-69F7-4411-8BFF-6DF105465A0C}._QA|Win32.ActiveCfg = _QA|Win32
+		{9AFA02E9-69F7-4411-8BFF-6DF105465A0C}._QA|Win32.Build.0 = _QA|Win32
+		{9AFA02E9-69F7-4411-8BFF-6DF105465A0C}._QA|x64.ActiveCfg = _QA|x64
+		{9AFA02E9-69F7-4411-8BFF-6DF105465A0C}._QA|x64.Build.0 = _QA|x64
+		{9AFA02E9-69F7-4411-8BFF-6DF105465A0C}._Release|Win32.ActiveCfg = _Release|Win32
+		{9AFA02E9-69F7-4411-8BFF-6DF105465A0C}._Release|Win32.Build.0 = _Release|Win32
+		{9AFA02E9-69F7-4411-8BFF-6DF105465A0C}._Release|x64.ActiveCfg = _Release|x64
+		{9AFA02E9-69F7-4411-8BFF-6DF105465A0C}._Release|x64.Build.0 = _Release|x64
+		{9AFA02E9-69F7-4411-8BFF-6DF105465A0C}._Tools|Win32.ActiveCfg = _Tools|Win32
+		{9AFA02E9-69F7-4411-8BFF-6DF105465A0C}._Tools|Win32.Build.0 = _Tools|Win32
+		{9AFA02E9-69F7-4411-8BFF-6DF105465A0C}._Tools|x64.ActiveCfg = _Tools|x64
+		{9AFA02E9-69F7-4411-8BFF-6DF105465A0C}._Tools|x64.Build.0 = _Tools|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
