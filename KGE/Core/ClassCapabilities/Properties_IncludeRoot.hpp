@@ -18,4 +18,4 @@ protected:
 			m_xProperties.erase(m_xProperties.begin());
 		}
 	}
-	set<KGE::Property*, KGE::Property::Compare> m_xProperties;
+	unordered_set<KGE::Property*, KGE::Property::Hasher> m_xProperties;

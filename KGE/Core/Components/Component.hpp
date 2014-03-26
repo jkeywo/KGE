@@ -20,17 +20,52 @@ namespace KGE
 		#include "Core/ClassCapabilities/Events_IncludeRoot.hpp"
 
 	public:
+		enum State
+		{
+			Unset,
+			Active,
+			Dormant,
+			Destroyed,
+		};
 		Component(ComponentContainer* pxParent)
 			: m_xTUID(*this)
-		{}
+			, m_pxParent(pxParent)
+			, m_eState(Unset)
+			, m_pxXMLNode(NULL)
+		{
+			RegisterEvents();
+		}
 		Component(xml_node<char>& xNode, ComponentContainer* pxParent)
 			: m_xTUID(*this)
-		{}
+			, m_pxParent(pxParent)
+			, m_eState(Unset)
+			, m_pxXMLNode(&xNode)
+		{
+			RegisterEvents();
+		}
 		virtual ~Component()
 		{
 			ClearProperties();
 			ClearEvents();
 		}
+
+	protected:
+		virtual void OnCreate(Event<root_t>::params_t& xEventParameters) { m_eState = Dormant; }
+		virtual void OnActivate(Event<root_t>::params_t& xEventParameters) { m_eState = Active; }
+		virtual void OnDeactivate(Event<root_t>::params_t& xEventParameters) { m_eState = Dormant; }
+		virtual void OnDestroy(Event<root_t>::params_t& xEventParameters) { m_eState = Destroyed; }
+
+		void RegisterEvents()
+		{
+			RegisterEvent(Hash("OnCreate"), boost::bind( &root_t::OnCreate, this, _1 ) );
+			RegisterEvent(Hash("OnActivate"), boost::bind( &root_t::OnActivate, this, _1 ) );
+			RegisterEvent(Hash("OnDeactivate"), boost::bind( &root_t::OnDeactivate, this, _1 ) );
+			RegisterEvent(Hash("OnDestroy"), boost::bind( &root_t::OnDestroy, this, _1 ) );
+		}
+
+		State m_eState;
+		ComponentContainer* m_pxParent;
+		xml_node<char>* m_pxXMLNode;
 	};
 
 	class ComponentContainer : public Component

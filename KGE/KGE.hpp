@@ -35,6 +35,7 @@ using namespace std::tr1;
 #include <SFML/Graphics/Text.hpp>
 #include <SFML/System/String.hpp>
 #include <SFML/System/Time.hpp>
+#include <SFML/Audio.hpp>
 #include <SFML/Window.hpp>
 #include <SFML/Graphics.hpp>
 #include <SFML/OpenGL.hpp>

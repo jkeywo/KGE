@@ -62,7 +62,10 @@ namespace KGE
 			FunctorCollection::iterator xIt = m_xCreateFunctors.find(xHash);
 			if (xIt != m_xCreateFunctors.end() && xIt->second != NULL)
 			{
-				return (*xIt->second)();
+				root_t* pxReturn = (*xIt->second)();
+				KGE::Event<root_t>::params_t xEventParameters;
+				pxReturn->OnEvent(KGE::Hash("OnCreate"), xEventParameters);
+				return pxReturn;
 			}
 			return NULL;
 		}
@@ -107,6 +110,8 @@ namespace KGE
 			{
 				root_t* pxReturn = (*xIt->second)(xNode);
 				pxReturn->ProcessXML(xNode);
+				KGE::Event<root_t>::params_t xEventParameters;
+				pxReturn->OnEvent(KGE::Hash("OnCreate"), xEventParameters);
 				return pxReturn;
 			}
 			return NULL;
@@ -149,7 +154,10 @@ namespace KGE
 			FunctorCollection::iterator xIt = m_xCreateFunctors.find(xHash);
 			if (xIt != m_xCreateFunctors.end() && xIt->second != NULL)
 			{
-				return (*xIt->second)(xArg0);
+				root_t* pxReturn = (*xIt->second)(xArg0);
+				KGE::Event<root_t>::params_t xEventParameters;
+				pxReturn->OnEvent(KGE::Hash("OnCreate"), xEventParameters);
+				return pxReturn;
 			}
 			return NULL;
 		}
@@ -194,6 +202,8 @@ namespace KGE
 			{
 				root_t* pxReturn = (*xIt->second)(xNode, xArg0);
 				pxReturn->ProcessXML(xNode);
+				KGE::Event<root_t>::params_t xEventParameters;
+				pxReturn->OnEvent(KGE::Hash("OnCreate"), xEventParameters);
 				return pxReturn;
 			}
 			return NULL;
@@ -236,7 +246,10 @@ namespace KGE
 			FunctorCollection::iterator xIt = m_xCreateFunctors.find(xHash);
 			if (xIt != m_xCreateFunctors.end() && xIt->second != NULL)
 			{
-				return (*xIt->second)(xArg0, xArg1);
+				root_t* pxReturn = (*xIt->second)(xArg0, xArg1);
+				KGE::Event<root_t>::params_t xEventParameters;
+				pxReturn->OnEvent(KGE::Hash("OnCreate"), xEventParameters);
+				return pxReturn;
 			}
 			return NULL;
 		}

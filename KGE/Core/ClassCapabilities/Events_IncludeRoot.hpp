@@ -1,18 +1,22 @@
-
+	
 public:
-	void OnEvent(const KGE::Hash& xEventHash, map<KGE::Hash, KGE::Data, KGE::Hash::Hasher>& xEventParameters)
+	void OnEvent(const KGE::Hash& xEventHash, KGE::Event<root_t>::params_t& xEventParameters)
 	{
-		/*map<KGE::Hash, KGE::Event*, KGE::Hash::Hasher>::iterator xIt = m_xEvents.find(xEventHash);
+		KGE::Event<root_t>::collection_t::iterator xIt = m_xEvents.find(xEventHash);
 		if (xIt != m_xEvents.end())
 		{
 			xIt->second->Execute( xEventParameters );
-		}*/
+		}
 	}
 
 protected:
-	void RegisterEvent(KGE::Event* pxEvent)
+	void RegisterEvent(const Hash& xHash, std::function<void(KGE::Event<root_t>::params_t&)> xCallback)
 	{
-		//m_xEvents.insert(pair<KGE::Hash, KGE::Event*>(pxEvent->GetHash(), pxEvent));
+		RegisterEvent(new KGE::Event<root_t>(xHash, *this, xCallback));
+	}
+	void RegisterEvent(KGE::Event<root_t>* pxEvent)
+	{
+		m_xEvents.insert(KGE::Event<root_t>::collectionpair_t(pxEvent->GetHash(), pxEvent));
 	}
 	void ClearEvents()
 	{
@@ -22,5 +26,4 @@ protected:
 			m_xEvents.erase(m_xEvents.begin());
 		}
 	}
-	map<KGE::Hash, KGE::Event*, KGE::Hash::Hasher> m_xEvents;
-	
+	KGE::Event<root_t>::collection_t m_xEvents;
