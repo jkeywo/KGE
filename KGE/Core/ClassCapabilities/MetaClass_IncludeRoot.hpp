@@ -5,6 +5,9 @@
 static_assert(false, "THIS_T must be defined");
 #endif
 
+private:
+	typedef THIS_T this_t;
+
 public:
 	typedef THIS_T root_t;
 	virtual const KGE::Hash& GetClassHash() const = 0;

@@ -1,6 +1,8 @@
 #pragma once
 
 #define CAPABILITYROOT_PROCESSXML													\
+private:																			\
+	typedef KGE::XMLParser<this_t> xmlparser_t;										\
 public:																				\
 	virtual void ProcessXML(const xml_node<char>& xNode)							\
 	{																				\
@@ -11,13 +13,15 @@ public:																				\
 	}																				\
 protected:																			\
 	virtual void Internal_ProcessXMLAttributes(const xml_node<char>& xNode) {}		\
-	virtual void Internal_PostAttributeProcessXML(const xml_node<char>& xNode) {}	\
+	virtual void Internal_PostAttributeProcessXML(const xml_node<char>& xNode)		\
+	{ xmlparser_t::Get().ProcessXMLAttributes(xNode, this); }						\
 	virtual void Internal_ProcessXMLChildNodes(const xml_node<char>& xNode) {}		\
-	virtual void Internal_PostChildNodeProcessXML(const xml_node<char>& xNode) {}
+	virtual void Internal_PostChildNodeProcessXML(const xml_node<char>& xNode)		\
+	{ xmlparser_t::Get().ProcessXMLChildNodes(xNode, this); }
 
 #define CAPABILITY_PROCESSXML														\
 private:																			\
-	typedef KGE::XMLParser<root_t, parent_t, this_t> xmlparser_t;					\
+	typedef KGE::XMLParser<this_t> xmlparser_t;										\
 public:																				\
 	virtual void Internal_ProcessXMLAttributes(const xml_node<char>& xNode)			\
 	{																				\
@@ -58,7 +62,7 @@ namespace KGE
 	template< class parent_t > class XMLAttributeHandler;
 	template< class parent_t > class XMLChildHandler;
 
-	template< class root_t, class parent_t, class this_t >
+	template< class this_t >
 	class XMLParser
 	{
 	public:

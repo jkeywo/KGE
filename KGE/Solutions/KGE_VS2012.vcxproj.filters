@@ -31,6 +31,12 @@
     <Filter Include="Core\Resources">
       <UniqueIdentifier>{d65e7145-a0e2-42ef-9cd2-de2a19d08452}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Core\Actions">
+      <UniqueIdentifier>{76b21b13-9c74-44fa-92ff-44d7ecdcc2e3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Actions\Basic">
+      <UniqueIdentifier>{971a1c25-8836-4dfc-917f-868cdeb47f08}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\KGE.cpp" />
@@ -56,9 +62,6 @@
       <Filter>Core\Components</Filter>
     </ClCompile>
     <ClCompile Include="..\Core\Components\ComponentComposite.cpp">
-      <Filter>Core\Components</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Core\Components\Signal.cpp">
       <Filter>Core\Components</Filter>
     </ClCompile>
     <ClCompile Include="..\Core\Components\Basic\ComponentLayer.cpp">
@@ -109,6 +112,15 @@
     <ClCompile Include="..\Core\ClassCapabilities\Events.cpp">
       <Filter>Core\ClassCapabilities</Filter>
     </ClCompile>
+    <ClCompile Include="..\Core\Actions\Action.cpp">
+      <Filter>Core\Actions</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Core\Actions\Basic\ActionSignal.cpp">
+      <Filter>Core\Actions\Basic</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Core\Actions\Basic\ActionLua.cpp">
+      <Filter>Core\Actions\Basic</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\KGE.hpp" />
@@ -129,9 +141,6 @@
     </ClInclude>
     <ClInclude Include="..\Core\Audio\ComponentAudioClip.hpp">
       <Filter>Core\Audio</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Core\Components\Signal.hpp">
-      <Filter>Core\Components</Filter>
     </ClInclude>
     <ClInclude Include="..\Core\Components\Component.hpp">
       <Filter>Core\Components</Filter>
@@ -207,6 +216,18 @@
     </ClInclude>
     <ClInclude Include="..\Core\Components\Component_Include.hpp">
       <Filter>Core\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Core\Actions\Action.hpp">
+      <Filter>Core\Actions</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Core\Actions\Action_Include.hpp">
+      <Filter>Core\Actions</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Core\Actions\Basic\ActionLua.hpp">
+      <Filter>Core\Actions\Basic</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Core\Actions\Basic\ActionSignal.hpp">
+      <Filter>Core\Actions\Basic</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

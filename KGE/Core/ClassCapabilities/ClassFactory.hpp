@@ -2,19 +2,19 @@
 
 // Class factories can only be used with classes that use the MetaClass #includes
 
-#define CAPABILITYROOT_CLASSFACTORY_ADD												\
+#define CAPABILITYROOT_CLASSFACTORY_ADD														\
 	public:	typedef KGE::ClassFactory<root_t> classfactory_t;								\
 		static root_t* Create( const Hash& xHash ) { return classfactory_t::Get().Create(xHash); }
-#define CAPABILITYROOT_CLASSFACTORY_ADDXML											\
+#define CAPABILITYROOT_CLASSFACTORY_ADDXML													\
 	public:	typedef KGE::ClassFactoryXML<root_t> classfactoryxml_t;							\
 		static root_t* Create( xml_node<char>& xNode ) { return classfactoryxml_t::Get().Create(xNode); }
-#define CAPABILITYROOT_CLASSFACTORY_ADD1ARG(ARG0)									\
+#define CAPABILITYROOT_CLASSFACTORY_ADD1ARG(ARG0)											\
 	public:	typedef KGE::ClassFactory1Arg<root_t, ARG0> classfactory1arg_t;					\
 		static root_t* Create( const Hash& xHash, ARG0 xArg0 ) { return classfactory1arg_t::Get().Create(xHash, xArg0); }
-#define CAPABILITYROOT_CLASSFACTORY_ADDXML1ARG(ARG0)								\
+#define CAPABILITYROOT_CLASSFACTORY_ADDXML1ARG(ARG0)										\
 	public:	typedef KGE::ClassFactoryXML1Arg<root_t, ARG0> classfactoryxml1arg_t;			\
 		static root_t* Create( xml_node<char>& xNode, ARG0 xArg0 ) { return classfactoryxml1arg_t::Get().Create(xNode, xArg0); }
-#define CAPABILITYROOT_CLASSFACTORY_ADD2ARGS(ARG0, ARG1)							\
+#define CAPABILITYROOT_CLASSFACTORY_ADD2ARGS(ARG0, ARG1)									\
 	public: typedef KGE::ClassFactory2Args<root_t, ARG0, ARG1> classfactory2args_t;			\
 		static root_t* Create( const Hash& xHash, ARG0 xArg0, ARG1 xArg1 ) { return classfactory2args_t::Get().Create(xHash, xArg0, xArg1); }
 
@@ -63,8 +63,6 @@ namespace KGE
 			if (xIt != m_xCreateFunctors.end() && xIt->second != NULL)
 			{
 				root_t* pxReturn = (*xIt->second)();
-				KGE::Event<root_t>::params_t xEventParameters;
-				pxReturn->OnEvent(KGE::Hash("OnCreate"), xEventParameters);
 				return pxReturn;
 			}
 			return NULL;
@@ -110,8 +108,6 @@ namespace KGE
 			{
 				root_t* pxReturn = (*xIt->second)(xNode);
 				pxReturn->ProcessXML(xNode);
-				KGE::Event<root_t>::params_t xEventParameters;
-				pxReturn->OnEvent(KGE::Hash("OnCreate"), xEventParameters);
 				return pxReturn;
 			}
 			return NULL;
@@ -155,8 +151,6 @@ namespace KGE
 			if (xIt != m_xCreateFunctors.end() && xIt->second != NULL)
 			{
 				root_t* pxReturn = (*xIt->second)(xArg0);
-				KGE::Event<root_t>::params_t xEventParameters;
-				pxReturn->OnEvent(KGE::Hash("OnCreate"), xEventParameters);
 				return pxReturn;
 			}
 			return NULL;
@@ -202,8 +196,6 @@ namespace KGE
 			{
 				root_t* pxReturn = (*xIt->second)(xNode, xArg0);
 				pxReturn->ProcessXML(xNode);
-				KGE::Event<root_t>::params_t xEventParameters;
-				pxReturn->OnEvent(KGE::Hash("OnCreate"), xEventParameters);
 				return pxReturn;
 			}
 			return NULL;
@@ -247,8 +239,6 @@ namespace KGE
 			if (xIt != m_xCreateFunctors.end() && xIt->second != NULL)
 			{
 				root_t* pxReturn = (*xIt->second)(xArg0, xArg1);
-				KGE::Event<root_t>::params_t xEventParameters;
-				pxReturn->OnEvent(KGE::Hash("OnCreate"), xEventParameters);
 				return pxReturn;
 			}
 			return NULL;
