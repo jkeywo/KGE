@@ -8,14 +8,10 @@ namespace KGE
 		#define THIS_T ActionSignal
 		#define PARENT_T Action
 		#define HASHSTRING_T "Signal"
-		#include "Core/ClassCapabilities/MetaClass_Include.hpp"
-		CAPABILITY_CLASSFACTORY_ADD
-		CAPABILITY_CLASSFACTORY_ADDXML
-		CAPABILITY_PROCESSXML
+		#include "Core/Actions/Action_Include.hpp"
 
 		STATIC_INITIALISE_START
 		{
-			XMLPARSER_REGISTERATTRIBUTE( "Target", ProcessTarget );
 			XMLPARSER_REGISTERATTRIBUTE( "Event", ProcessEvent );
 			XMLPARSER_REGISTERCHILDNODE( "Parameter", ProcessParameter );
 		}
@@ -26,15 +22,14 @@ namespace KGE
 		ActionSignal(xml_node<char>& xNode);
 		virtual ~ActionSignal();
 
-		virtual void Activate( Component* pxSource, eventparams_t& xParams );
+		virtual void Activate(eventparams_t& xParams);
 
 	protected:
-		virtual void ProcessTarget( xml_attribute<char>& xTarget );
 		virtual void ProcessEvent( xml_attribute<char>& xEvent );
 		virtual void ProcessParameter( xml_node<char>& xPriority );
 
-		string m_szTargetPath;
-		Hash m_xTargetEvent;
+		const char* m_szEventPath;
 		eventparams_t m_xParameters;
 	};
+
 };

@@ -64,17 +64,20 @@ namespace KGE
 		Component(xml_node<char>& xNode, ComponentContainer* pxParent);
 		virtual ~Component();
 
-		Component* GetComponentByPath(const string& xPath);
-		template<class TYPE_T> TYPE_T* GetParentByType() { return static_cast<TYPE_T*>( GetParentByType( TYPE_T::Static_GetClassHash() ) ); }
+		void OnEventByPath(const char* szPath, eventparams_t& xEventParameters);
+		Data GetPropertyByPath(const char* szPath);
+		template<class TYPE_T> TYPE_T* GetParentByType() { return static_cast<TYPE_T*>(GetParentByType(TYPE_T::Static_GetClassHash())); }
 		Component* GetParentByType(const Hash& xType);
 		Component* GetParentByName(const Hash& xName);
 
-	protected:
+		virtual float GetPriority() { return 0.0f; }
+
 		virtual void OnCreate(eventparams_t& xEventParameters) { m_eState = Dormant; }
 		virtual void OnActivate(eventparams_t& xEventParameters) { m_eState = Active; }
 		virtual void OnDeactivate(eventparams_t& xEventParameters) { m_eState = Dormant; }
 		virtual void OnDestroy(eventparams_t& xEventParameters) { m_eState = Destroyed; s_xDestroyedComponents.push_back(this); }
 
+	protected:
 		void RegisterEvents();
 
 		virtual void ProcessName( xml_attribute<char>& xName );
@@ -91,6 +94,15 @@ namespace KGE
 		Hash m_xName;
 	};
 
+	typedef multi_index_container<
+			Component*,
+			indexed_by
+			<
+				ordered_unique< multi_index::identity<Component*> >,
+				ordered_non_unique< multi_index::mem_fun<Component, float, &Component::GetPriority> >
+			>
+		> componentcontainer_t;
+
 	class ComponentContainer : public Component
 	{
 		#define THIS_T ComponentContainer
@@ -98,6 +110,11 @@ namespace KGE
 		#define HASHSTRING_T "ComponentContainer"
 		#include "Core/Components/Component_Include.hpp"
 
+		STATIC_INITIALISE_START
+		{
+			XMLPARSER_REGISTERCHILDNODE("Component", PopulateComponent);
+		}
+		STATIC_INITIALISE_END
 	public:
 		ComponentContainer(ComponentContainer* pxParent)
 			: parent_t(pxParent)
@@ -105,5 +122,18 @@ namespace KGE
 		ComponentContainer(xml_node<char>& xNode, ComponentContainer* pxParent)
 			: parent_t(xNode, pxParent)
 		{}
+		virtual ~ComponentContainer() {}
+
+		virtual bool IsComposite() const { return false; }
+		virtual bool IsCollection() const { return false; }
+
+		virtual void OnActivate(eventparams_t& xEventParameters);
+		virtual void OnDeactivate(eventparams_t& xEventParameters);
+		virtual void OnDestroy(eventparams_t& xEventParameters);
+
+	protected:
+		void PopulateComponent(xml_node<char>& xComponentNode);
+
+		componentcontainer_t m_xComponents;
 	};
 };

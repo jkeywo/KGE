@@ -1,12 +1,10 @@
 #pragma once
 
+#include "Core/Actions/Action.hpp"
+#include "Core/Data/CommonHashes.hpp"
+
 namespace KGE
 {
-	typedef unordered_map<Hash, Data, Hash::Hasher> eventparams_t;
-	typedef pair<Hash, Data> eventparamspair_t;
-
-	class Action;
-
 	template<class owner_t>
 	class Event
 	{
@@ -24,20 +22,34 @@ namespace KGE
 		{
 		}
 
-		// register action
-		virtual void RegisterAction( Action* pxAction ) {}
-		// unregister action
-
-		virtual void Execute(eventparams_t& xEventParameters)
+		void RegisterAction(Action* pxAction)
 		{
-			m_xCallback(xEventParameters);
-			// call actions
+			m_xActions.insert(pxAction);
+		}
+		void Execute(eventparams_t& xEventParameters)
+		{
+			xEventParameters.insert(eventparamspair_t(g_xHASH_SOURCE, Data(&m_xCaller)));
+			bool bCallbackDone = false;
+			FOREACH(xIt, m_xActions)
+			{
+				Action* pxAction = (*xIt);
+				if (!bCallbackDone && pxAction->GetPriority() < 0.0f)
+				{
+					m_xCallback(xEventParameters);
+					bCallbackDone = true;
+				}
+				pxAction->Activate(xEventParameters);
+			}
+			if (!bCallbackDone)
+			{
+				m_xCallback(xEventParameters);
+			}
 		}
 		virtual const Hash& GetHash() const { return m_xHash; }
 	protected:
 		Hash m_xHash;
 		owner_t& m_xCaller;
 		std::function<void(eventparams_t&)> m_xCallback;
-		// action list
+		std::set<Action*, typename Action::Comparer> m_xActions;
 	};
 };

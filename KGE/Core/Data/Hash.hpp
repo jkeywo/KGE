@@ -5,12 +5,14 @@
 #define DEBUG_STORE_STRING(STRING) , m_szHashString(STRING)
 #define DEBUG_SET_STRING(STRING) m_szHashString = STRING;
 #define DEBUG_APPEND_STRING(STRING) m_szHashString.append(STRING);
+#define DEBUG_APPEND_CHAR(CHAR) m_szHashString += CHAR;
 #define DEBUG_CLEAR_STRING m_szHashString.clear();
 #define CHECKED_HASH(HASH, STRING) KGE::Hash(HASH, STRING)
 #else
 #define DEBUG_STORE_STRING(STRING)
 #define DEBUG_SET_STRING(STRING)
 #define DEBUG_APPEND_STRING(STRING)
+#define DEBUG_APPEND_CHAR(STRING)
 #define DEBUG_CLEAR_STRING
 #define CHECKED_HASH(HASH, STRING) KGE::Hash(HASH)
 #endif
@@ -48,6 +50,7 @@ namespace KGE
 		void operator=(const Hash& b) { m_uHash = b.m_uHash; DEBUG_SET_STRING(b.m_szHashString) }
 		void operator=(const string& b) { SetHash(b); DEBUG_SET_STRING(b) }
 		void operator+=(const string& b) { ConcatenateHash(b); DEBUG_APPEND_STRING(b) }
+		void operator+=(char b) { ConcatenateHash(b); DEBUG_APPEND_CHAR(b) }
 		bool operator==(const Hash& b) const { return m_uHash == b.m_uHash; }
 		bool operator!=(const Hash& b) const { return m_uHash != b.m_uHash; }
 		bool operator<(const Hash& b) const { return m_uHash < b.m_uHash; }
@@ -60,6 +63,17 @@ namespace KGE
 			}
 			DEBUG_CLEAR_STRING
 			return *this;
+		}
+
+		// hashes the first token form the string and returns if we've hit the end or not
+		bool FromToken(char cSeperator, const char*& szString)
+		{
+			Invalidate();
+			while ((*szString) != cSeperator && (*szString) != '\0')
+			{
+				operator+=(*(szString++));
+			}
+			return *(szString++) == '\0';
 		}
 
 		unsigned int GetHash() const { return m_uHash; }
@@ -84,6 +98,10 @@ namespace KGE
 		}
 		void ConcatenateHash(char cChar)
 		{
+			if (cChar >= 'A' || cChar <= 'Z')
+			{
+				cChar -= 'a' - 'A'; // move to lower case
+			}
 			m_uHash = ((m_uHash << 5) + m_uHash) + cChar;
 		}
 		unsigned int m_uHash;

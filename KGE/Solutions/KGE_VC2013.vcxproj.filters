@@ -20,9 +20,6 @@
     <ClCompile Include="..\Core\ClassCapabilities\Properties.cpp">
       <Filter>Core\ClassCapabilities</Filter>
     </ClCompile>
-    <ClCompile Include="..\Core\Components\Signal.cpp">
-      <Filter>Core\Components</Filter>
-    </ClCompile>
     <ClCompile Include="..\Core\Resources\FontManager.cpp">
       <Filter>Core\Resources</Filter>
     </ClCompile>
@@ -77,6 +74,15 @@
     <ClCompile Include="..\Core\ClassCapabilities\Events.cpp">
       <Filter>Core\ClassCapabilities</Filter>
     </ClCompile>
+    <ClCompile Include="..\Core\Actions\Action.cpp">
+      <Filter>Core\Actions</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Core\Actions\Basic\ActionSignal.cpp">
+      <Filter>Core\Actions\Basic</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Core\Actions\Basic\ActionLua.cpp">
+      <Filter>Core\Actions\Basic</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\KGE.hpp" />
@@ -117,9 +123,6 @@
       <Filter>Core\Components</Filter>
     </ClInclude>
     <ClInclude Include="..\Core\Components\ComponentComposite.hpp">
-      <Filter>Core\Components</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Core\Components\Signal.hpp">
       <Filter>Core\Components</Filter>
     </ClInclude>
     <ClInclude Include="..\Core\AI\ComponentState.hpp">
@@ -176,6 +179,21 @@
     <ClInclude Include="..\Core\ClassCapabilities\Events_IncludeRoot.hpp">
       <Filter>Core\ClassCapabilities</Filter>
     </ClInclude>
+    <ClInclude Include="..\Core\Actions\Action_Include.hpp">
+      <Filter>Core\Actions</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Core\Actions\Action.hpp">
+      <Filter>Core\Actions</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Core\Actions\Basic\ActionLua.hpp">
+      <Filter>Core\Actions\Basic</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Core\Actions\Basic\ActionSignal.hpp">
+      <Filter>Core\Actions\Basic</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Core\Data\CommonHashes.hpp">
+      <Filter>Core\Data</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Core">
@@ -207,6 +225,12 @@
     </Filter>
     <Filter Include="Core\Interface">
       <UniqueIdentifier>{9ac4d078-1d2b-4720-9ad6-bf5249e86543}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Actions">
+      <UniqueIdentifier>{ea8411e8-81ef-4350-ba8b-6213c5879278}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Actions\Basic">
+      <UniqueIdentifier>{a48cb751-f1b2-4eda-876a-0b8452591db8}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

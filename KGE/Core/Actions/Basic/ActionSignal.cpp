@@ -19,24 +19,20 @@ namespace KGE
 	{
 	}
 
-	void ActionSignal::Activate( Component* pxSource, eventparams_t& xParams )
+	void ActionSignal::Activate(eventparams_t& xParams)
 	{
-		Component* pxTarget = pxSource->GetComponentByPath(m_szTargetPath);
-		if(pxTarget)
+		eventparams_t::iterator xIt = xParams.find(g_xHASH_SOURCE);
+		if (xIt != xParams.end() && xIt->second.AsComponent())
 		{
-			pxTarget->OnEvent(m_xTargetEvent, m_xParameters);
+			xIt->second.AsComponent()->OnEventByPath(m_szEventPath, m_xParameters);
 		}
 	}
 
-	void ActionSignal::ProcessTarget( xml_attribute<char>& xTarget )
+	void ActionSignal::ProcessEvent(xml_attribute<char>& xEvent)
 	{
-		m_szTargetPath = xTarget.value();
+		m_szEventPath = xEvent.value();
 	}
-	void ActionSignal::ProcessEvent( xml_attribute<char>& xEvent )
-	{
-		m_xTargetEvent = Hash( xEvent.value() );
-	}
-	void ActionSignal::ProcessParameter( xml_node<char>& xParameter )
+	void ActionSignal::ProcessParameter(xml_node<char>& xParameter)
 	{
 		const char* szName = XMLHelpers::GetAttributeValue(xParameter, "name");
 		string szValue = XMLHelpers::GetAttributeValue(xParameter, "value");

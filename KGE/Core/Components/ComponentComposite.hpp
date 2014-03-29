@@ -25,5 +25,8 @@ namespace KGE
 		ComponentComposite(xml_node<char>& xNode, ComponentContainer* pxParent)
 			: parent_t(xNode, pxParent)
 		{}
+
+		virtual bool IsComposite() const { return true; }
+
 	};
 };

@@ -3,7 +3,6 @@
 
 namespace KGE
 {
-
 	ActionLua::ActionLua()
 		: parent_t()
 	{
@@ -17,8 +16,4 @@ namespace KGE
 	{
 	}
 
-	void ActionLua::Activate( Component* pxSource, eventparams_t& xParams )
-	{
-		//m_szLuaCode;
-	}
 };

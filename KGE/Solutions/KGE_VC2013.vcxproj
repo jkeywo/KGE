@@ -256,6 +256,9 @@
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\Core\Actions\Action.cpp" />
+    <ClCompile Include="..\Core\Actions\Basic\ActionLua.cpp" />
+    <ClCompile Include="..\Core\Actions\Basic\ActionSignal.cpp" />
     <ClCompile Include="..\Core\AI\ComponentState.cpp" />
     <ClCompile Include="..\Core\AI\ComponentStateMachine.cpp" />
     <ClCompile Include="..\Core\Audio\ComponentAudioClip.cpp" />
@@ -273,7 +276,6 @@
     <ClCompile Include="..\Core\Components\Component.cpp" />
     <ClCompile Include="..\Core\Components\ComponentCollection.cpp" />
     <ClCompile Include="..\Core\Components\ComponentComposite.cpp" />
-    <ClCompile Include="..\Core\Components\Signal.cpp" />
     <ClCompile Include="..\Core\Data\Data.cpp" />
     <ClCompile Include="..\Core\Graphics\ComponentSprite.cpp" />
     <ClCompile Include="..\Core\Graphics\Sprite.cpp" />
@@ -284,6 +286,10 @@
     <ClCompile Include="..\KGE.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\Core\Actions\Action.hpp" />
+    <ClInclude Include="..\Core\Actions\Action_Include.hpp" />
+    <ClInclude Include="..\Core\Actions\Basic\ActionLua.hpp" />
+    <ClInclude Include="..\Core\Actions\Basic\ActionSignal.hpp" />
     <ClInclude Include="..\Core\AI\ComponentState.hpp" />
     <ClInclude Include="..\Core\AI\ComponentStateMachine.hpp" />
     <ClInclude Include="..\Core\Audio\ComponentAudioClip.hpp" />
@@ -306,7 +312,7 @@
     <ClInclude Include="..\Core\Components\ComponentCollection.hpp" />
     <ClInclude Include="..\Core\Components\ComponentComposite.hpp" />
     <ClInclude Include="..\Core\Components\Component_Include.hpp" />
-    <ClInclude Include="..\Core\Components\Signal.hpp" />
+    <ClInclude Include="..\Core\Data\CommonHashes.hpp" />
     <ClInclude Include="..\Core\Data\Data.hpp" />
     <ClInclude Include="..\Core\Data\TUID.hpp" />
     <ClInclude Include="..\Core\Data\Hash.hpp" />
