@@ -8,9 +8,7 @@ namespace KGE
 
 	class ComponentStateMachine : public ComponentComposite
 	{
-		#define THIS_T ComponentStateMachine
-		#define PARENT_T ComponentComposite
-		#define HASHSTRING_T "StateMachine"
+		METACLASS_CHILDDATA(ComponentStateMachine, ComponentComposite, "StateMachine")
 		#include "Core/Components/Component_Include.hpp"
 		STATIC_INITIALISE_START
 		{

@@ -1,5 +1,6 @@
 #pragma once
 
+#include "Core/ClassCapabilities/MetaClass.hpp"
 #include "Core/ClassCapabilities/ClassFactory.hpp"
 #include "Core/ClassCapabilities/Events.hpp"
 #include "Core/ClassCapabilities/Properties.hpp"
@@ -11,12 +12,13 @@ namespace KGE
 
 	class Component
 	{
-		#define THIS_T Component
-		#include "Core/ClassCapabilities/MetaClass_IncludeRoot.hpp"
-		CAPABILITYROOT_PROCESSXML
-		#include "Core/ClassCapabilities/Properties_IncludeRoot.hpp"
-		#include "Core/ClassCapabilities/Events_IncludeRoot.hpp"
-		
+		METACLASS_ROOTDATA(Component)
+		#define SUPPORT_XML
+		#define SUPPORT_EVENTS
+		#define SUPPORT_PROPERTIES
+		#define SUPPORT_CLASSFACTORY_1ARG		ComponentContainer*
+		#define SUPPORT_CLASSFACTORY_XML_1ARG	ComponentContainer*
+		#include "Core/ClassCapabilities/MetaClass_IncludeRoot.hpp"	
 		STATIC_INITIALISE_START
 		{
 			XMLPARSER_REGISTERATTRIBUTE( "Name", ProcessName );
@@ -28,29 +30,6 @@ namespace KGE
 		STATIC_INITIALISE_END
 
 	public:
-		typedef KGE::ClassFactory1Arg<root_t, ComponentContainer*> classfactory1arg_t;	
-		static root_t* Create(const Hash& xHash, ComponentContainer* pxParent)
-		{
-			root_t* pxReturn = classfactory1arg_t::Get().Create(xHash, pxParent);
-			if (pxReturn)
-			{
-				eventparams_t xEventParameters;
-				pxReturn->OnEvent(KGE::Hash("OnCreate"), xEventParameters);
-			}
-			return pxReturn;
-		}
-		typedef KGE::ClassFactoryXML1Arg<root_t, ComponentContainer*> classfactoryxml1arg_t;
-		static this_t* Create(xml_node<char>& xNode, ComponentContainer* pxParent)
-		{
-			root_t* pxReturn = classfactoryxml1arg_t::Get().Create(xNode, pxParent);
-			if (pxReturn)
-			{
-				eventparams_t xEventParameters;
-				pxReturn->OnEvent(KGE::Hash("OnCreate"), xEventParameters);
-			}
-			return pxReturn;
-		}
-
 		static void DeleteDestroyed();
 
 		enum State
@@ -105,16 +84,14 @@ namespace KGE
 
 	class ComponentContainer : public Component
 	{
-		#define THIS_T ComponentContainer
-		#define PARENT_T Component
-		#define HASHSTRING_T "ComponentContainer"
+		METACLASS_CHILDDATA(ComponentContainer, Component, "ComponentContainer")
 		#include "Core/Components/Component_Include.hpp"
-
 		STATIC_INITIALISE_START
 		{
 			XMLPARSER_REGISTERCHILDNODE("Component", PopulateComponent);
 		}
 		STATIC_INITIALISE_END
+
 	public:
 		ComponentContainer(ComponentContainer* pxParent)
 			: parent_t(pxParent)

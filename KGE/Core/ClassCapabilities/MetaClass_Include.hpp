@@ -1,25 +1,7 @@
 
 // include to add metadata to the current class, must inherit from a class that has included MetaClass_AddRoot
 
-#ifndef THIS_T
-static_assert(false, "THIS_T must be defined");
-#endif
-#ifndef PARENT_T
-static_assert(false, "PARENT_T must be defined");
-#endif
-#ifndef HASHSTRING_T
-static_assert(false, "HASHSTRING_T must be defined");
-#endif
-
-private:
-	typedef PARENT_T parent_t;
-	typedef THIS_T this_t;
 public:
-	static const KGE::Hash& Static_GetClassHash()
-	{
-		static KGE::Hash xHash( HASHSTRING_T );
-		return xHash;
-	}
 	virtual const KGE::Hash& GetClassHash() const
 	{ 
 		return this_t::Static_GetClassHash();
@@ -29,10 +11,85 @@ public:
 		return Static_GetClassHash() == xClassHash ? true : parent_t::IsBaseOrDerivedClass(xClassHash);
 	}
 
-#ifdef PRESERVE_DEFINES
-#undef PRESERVE_DEFINES
-#else
-#undef THIS_T
-#undef PARENT_T
-#undef HASHSTRING_T
+#ifdef SUPPORT_CLASSFACTORY_0ARG
+public:	
+	static this_t* Create(const KGE::Hash& xHash)
+	{ 
+		root_t* pxReturn = classfactory_t::Get().Create(xHash);
+		if (pxReturn && pxReturn->IsBaseOrDerivedClass(this_t::Static_GetClassHash()))
+		{
+#ifdef SUPPORT_EVENTS
+			KGE::eventparams_t xEventParameters;
+			pxReturn->OnEvent(KGE::g_xHASH_ONCREATE, xEventParameters);
 #endif
+			return static_cast<this_t*>(pxReturn);
+		}
+		delete pxReturn;
+		return NULL; 
+	}
+#endif
+
+#ifdef SUPPORT_CLASSFACTORY_XML_0ARG
+public:	
+	static this_t* Create(xml_node<char>& xNode) 
+	{ 
+		root_t* pxReturn = classfactoryxml_t::Get().Create(xNode);
+		if (pxReturn && pxReturn->IsBaseOrDerivedClass(this_t::Static_GetClassHash()))
+		{
+#ifdef SUPPORT_EVENTS
+			KGE::eventparams_t xEventParameters;
+			pxReturn->OnEvent(KGE::g_xHASH_ONCREATE, xEventParameters);
+#endif
+			return static_cast<this_t*>(pxReturn);
+		}
+		delete pxReturn;
+		return NULL;
+	}
+#endif
+
+#ifdef SUPPORT_CLASSFACTORY_1ARG
+	public:	
+		static this_t* Create(const Hash& xHash, SUPPORT_CLASSFACTORY_1ARG xArg0) 
+		{ 
+			root_t* pxReturn = classfactory1arg_t::Get().Create(xHash, xArg0); 
+			if (pxReturn && pxReturn->IsBaseOrDerivedClass(this_t::Static_GetClassHash()))
+			{
+#ifdef SUPPORT_EVENTS
+				KGE::eventparams_t xEventParameters;
+				pxReturn->OnEvent(KGE::g_xHASH_ONCREATE, xEventParameters);
+#endif
+				return static_cast<this_t*>(pxReturn);
+			}
+			delete pxReturn; 
+			return NULL; 
+		}
+#endif
+#ifdef SUPPORT_CLASSFACTORY_XML_1ARG
+public:	
+	static this_t* Create(xml_node<char>& xNode, SUPPORT_CLASSFACTORY_XML_1ARG xArg0)
+	{ 
+		root_t* pxReturn = classfactoryxml1arg_t::Get().Create(xNode, xArg0); 
+		if (pxReturn && pxReturn->IsBaseOrDerivedClass(this_t::Static_GetClassHash()))
+		{
+#ifdef SUPPORT_EVENTS
+			KGE::eventparams_t xEventParameters;
+			pxReturn->OnEvent(KGE::g_xHASH_ONCREATE, xEventParameters);
+#endif
+			return static_cast<this_t*>(pxReturn);
+		}
+		delete pxReturn; 
+		return NULL; 
+	}
+#endif
+
+#ifdef SUPPORT_XML
+#include "Core/ClassCapabilities/XMLParser_Include.hpp"
+#endif
+
+#undef SUPPORT_XML
+#undef SUPPORT_EVENTS
+#undef SUPPORT_PROPERTIES
+#undef SUPPORT_CLASSFACTORY_0ARG
+#undef SUPPORT_CLASSFACTORY_XML_0ARG
+#undef SUPPORT_CLASSFACTORY_1ARG
+#undef SUPPORT_CLASSFACTORY_XML_1ARG

@@ -1,6 +1,6 @@
 #pragma once
 
-
+#include "Core/ClassCapabilities/MetaClass.hpp"
 #include "Core/ClassCapabilities/ClassFactory.hpp"
 #include "Core/ClassCapabilities/XMLParser.hpp"
 #include "Core/Data/CommonHashes.hpp"
@@ -13,12 +13,11 @@ namespace KGE
 
 	class Action
 	{
-		#define THIS_T Action
+		METACLASS_ROOTDATA(Action)
+		#define SUPPORT_XML
+		#define SUPPORT_CLASSFACTORY_0ARG
+		#define SUPPORT_CLASSFACTORY_XML_0ARG
 		#include "Core/ClassCapabilities/MetaClass_IncludeRoot.hpp"
-		CAPABILITYROOT_CLASSFACTORY_ADD
-		CAPABILITYROOT_CLASSFACTORY_ADDXML
-		CAPABILITYROOT_PROCESSXML
-
 		STATIC_INITIALISE_START
 		{
 			XMLPARSER_REGISTERATTRIBUTE( "Priority", ProcessPriority );

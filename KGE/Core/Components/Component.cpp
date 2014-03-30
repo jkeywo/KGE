@@ -134,10 +134,10 @@ namespace KGE
 	
 	void Component::RegisterEvents()
 	{
-		RegisterEvent(Hash("OnCreate"), boost::bind( &root_t::OnCreate, this, _1 ) );
-		RegisterEvent(Hash("OnActivate"), boost::bind( &root_t::OnActivate, this, _1 ) );
-		RegisterEvent(Hash("OnDeactivate"), boost::bind( &root_t::OnDeactivate, this, _1 ) );
-		RegisterEvent(Hash("OnDestroy"), boost::bind( &root_t::OnDestroy, this, _1 ) );
+		RegisterEvent(g_xHASH_ONCREATE, boost::bind(&root_t::OnCreate, this, _1));
+		RegisterEvent(g_xHASH_ONACTIVATE, boost::bind(&root_t::OnActivate, this, _1));
+		RegisterEvent(g_xHASH_ONDEACTIVATE, boost::bind(&root_t::OnDeactivate, this, _1));
+		RegisterEvent(g_xHASH_ONDESTROY, boost::bind(&root_t::OnDestroy, this, _1));
 	}
 
 	void Component::ProcessName( xml_attribute<char>& xName )

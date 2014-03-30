@@ -5,9 +5,7 @@ namespace KGE
 {
 	class ActionSignal : public Action
 	{
-		#define THIS_T ActionSignal
-		#define PARENT_T Action
-		#define HASHSTRING_T "Signal"
+		METACLASS_CHILDDATA(ActionSignal, Action, "Signal")
 		#include "Core/Actions/Action_Include.hpp"
 
 		STATIC_INITIALISE_START

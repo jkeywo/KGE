@@ -1,35 +1,5 @@
 #pragma once
 
-// Class factories can only be used with classes that use the MetaClass #includes
-
-#define CAPABILITYROOT_CLASSFACTORY_ADD														\
-	public:	typedef KGE::ClassFactory<root_t> classfactory_t;								\
-		static root_t* Create( const Hash& xHash ) { return classfactory_t::Get().Create(xHash); }
-#define CAPABILITYROOT_CLASSFACTORY_ADDXML													\
-	public:	typedef KGE::ClassFactoryXML<root_t> classfactoryxml_t;							\
-		static root_t* Create( xml_node<char>& xNode ) { return classfactoryxml_t::Get().Create(xNode); }
-#define CAPABILITYROOT_CLASSFACTORY_ADD1ARG(ARG0)											\
-	public:	typedef KGE::ClassFactory1Arg<root_t, ARG0> classfactory1arg_t;					\
-		static root_t* Create( const Hash& xHash, ARG0 xArg0 ) { return classfactory1arg_t::Get().Create(xHash, xArg0); }
-#define CAPABILITYROOT_CLASSFACTORY_ADDXML1ARG(ARG0)										\
-	public:	typedef KGE::ClassFactoryXML1Arg<root_t, ARG0> classfactoryxml1arg_t;			\
-		static root_t* Create( xml_node<char>& xNode, ARG0 xArg0 ) { return classfactoryxml1arg_t::Get().Create(xNode, xArg0); }
-#define CAPABILITYROOT_CLASSFACTORY_ADD2ARGS(ARG0, ARG1)									\
-	public: typedef KGE::ClassFactory2Args<root_t, ARG0, ARG1> classfactory2args_t;			\
-		static root_t* Create( const Hash& xHash, ARG0 xArg0, ARG1 xArg1 ) { return classfactory2args_t::Get().Create(xHash, xArg0, xArg1); }
-
-#define CAPABILITY_CLASSFACTORY_ADD													\
-	public:	static this_t* Create(const Hash& xHash) { root_t* pxRet = classfactory_t::Get().Create(xHash); if (pxRet->IsBaseOrDerivedClass(this_t::Static_GetClassHash())) return static_cast<this_t*>(pxRet); delete pxRet; return NULL; }
-#define CAPABILITY_CLASSFACTORY_ADDXML												\
-	public:	static this_t* Create(xml_node<char>& xNode) { root_t* pxRet = classfactoryxml_t::Get().Create(xNode); if (pxRet->IsBaseOrDerivedClass(this_t::Static_GetClassHash())) return static_cast<this_t*>(pxRet); delete pxRet; return NULL; }
-#define CAPABILITY_CLASSFACTORY_ADD1ARG(ARG0)										\
-	public:	static this_t* Create(const Hash& xHash, ARG0 xArg0) { root_t* pxRet = classfactory1arg_t::Get().Create(xHash, xArg0); if (pxRet->IsBaseOrDerivedClass(this_t::Static_GetClassHash())) return static_cast<this_t*>(pxRet); delete pxRet; return NULL; }
-#define CAPABILITY_CLASSFACTORY_ADDXML1ARG(ARG0)									\
-	public:	static this_t* Create(xml_node<char>& xNode, ARG0 xArg0) { root_t* pxRet = classfactoryxml1arg_t::Get().Create(xNode, xArg0); if (pxRet->IsBaseOrDerivedClass(this_t::Static_GetClassHash())) return static_cast<this_t*>(pxRet); delete pxRet; return NULL; }
-#define CAPABILITY_CLASSFACTORY_ADD2ARGS(ARG0, ARG1)								\
-	public:	static this_t* Create(const Hash& xHash, ARG0 xArg0, ARG1 xArg1) { root_t* pxRet = classfactory2args_t::Get().Create(xHash, xArg0, xArg1); if (pxRet->IsBaseOrDerivedClass(this_t::Static_GetClassHash())) return static_cast<this_t*>(pxRet); delete pxRet; return NULL; }
-
-
 // for registering classes inside static initialiser
 #define CLASSFACTORY_REGISTER					KGE::ClassFactory<root_t>::Get().Register( this_t::Static_GetClassHash(), new KGE::CreateFunctor<root_t, this_t>() );
 #define CLASSFACTORY_REGISTERXML				KGE::ClassFactoryXML<root_t>::Get().Register( this_t::Static_GetClassHash(), new KGE::CreateFunctorXML<root_t, this_t>() );

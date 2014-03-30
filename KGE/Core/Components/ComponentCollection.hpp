@@ -8,9 +8,7 @@ namespace KGE
 
 	class ComponentCollection : public ComponentContainer
 	{
-		#define THIS_T ComponentCollection
-		#define PARENT_T ComponentContainer
-		#define HASHSTRING_T "ComponentCollection"
+		METACLASS_CHILDDATA(ComponentCollection, ComponentContainer, "Collection")
 		#include "Core/Components/Component_Include.hpp"
 
 		STATIC_INITIALISE_START

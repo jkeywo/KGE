@@ -297,11 +297,14 @@
     <ClInclude Include="..\Core\ClassCapabilities\ClassFactory.hpp" />
     <ClInclude Include="..\Core\ClassCapabilities\Events.hpp" />
     <ClInclude Include="..\Core\ClassCapabilities\Events_IncludeRoot.hpp" />
+    <ClInclude Include="..\Core\ClassCapabilities\MetaClass.hpp" />
     <ClInclude Include="..\Core\ClassCapabilities\MetaClass_Include.hpp" />
     <ClInclude Include="..\Core\ClassCapabilities\MetaClass_IncludeRoot.hpp" />
     <ClInclude Include="..\Core\ClassCapabilities\Properties.hpp" />
     <ClInclude Include="..\Core\ClassCapabilities\Properties_IncludeRoot.hpp" />
     <ClInclude Include="..\Core\ClassCapabilities\XMLParser.hpp" />
+    <ClInclude Include="..\Core\ClassCapabilities\XMLParser_Include.hpp" />
+    <ClInclude Include="..\Core\ClassCapabilities\XMLParser_IncludeRoot.hpp" />
     <ClInclude Include="..\Core\Components\Basic\ComponentCameraLayer.hpp" />
     <ClInclude Include="..\Core\Components\Basic\ComponentGame.hpp" />
     <ClInclude Include="..\Core\Components\Basic\ComponentLayer.hpp" />

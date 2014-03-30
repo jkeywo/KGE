@@ -194,6 +194,15 @@
     <ClInclude Include="..\Core\Data\CommonHashes.hpp">
       <Filter>Core\Data</Filter>
     </ClInclude>
+    <ClInclude Include="..\Core\ClassCapabilities\MetaClass.hpp">
+      <Filter>Core\ClassCapabilities</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Core\ClassCapabilities\XMLParser_Include.hpp">
+      <Filter>Core\ClassCapabilities</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Core\ClassCapabilities\XMLParser_IncludeRoot.hpp">
+      <Filter>Core\ClassCapabilities</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Core">

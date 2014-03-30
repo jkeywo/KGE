@@ -5,9 +5,7 @@ namespace KGE
 {
 	class ActionLua : public Action
 	{
-		#define THIS_T ActionLua
-		#define PARENT_T Action
-		#define HASHSTRING_T "Lua"
+		METACLASS_CHILDDATA(ActionLua, Action, "Lua")
 		#include "Core/Actions/Action_Include.hpp"
 
 	public:

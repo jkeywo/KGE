@@ -6,9 +6,7 @@ namespace KGE
 {
 	class ComponentComposite : public ComponentContainer
 	{
-		#define THIS_T ComponentComposite
-		#define PARENT_T ComponentContainer
-		#define HASHSTRING_T "ComponentComposite"
+		METACLASS_CHILDDATA(ComponentComposite, ComponentContainer, "Composite")
 		#include "Core/Components/Component_Include.hpp"
 
 		STATIC_INITIALISE_START
