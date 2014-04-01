@@ -91,6 +91,7 @@ typedef char s8;
 #define STATIC_INITIALISE_RUN( TParentClass )	TParentClass::StaticInitialise TParentClass::s_xStaticInitialise;
 
 // Core classes
+#include "Core/Maths/Maths.hpp"
 #include "Core/Data/Hash.hpp"
 #include "Core/Data/TUID.hpp"
 #include "Core/Data/Data.hpp"

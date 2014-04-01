@@ -83,6 +83,9 @@
     <ClCompile Include="..\Core\Actions\Basic\ActionLua.cpp">
       <Filter>Core\Actions\Basic</Filter>
     </ClCompile>
+    <ClCompile Include="..\Core\Maths\Vec2f.cpp">
+      <Filter>Core\Maths</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\KGE.hpp" />
@@ -203,6 +206,12 @@
     <ClInclude Include="..\Core\ClassCapabilities\XMLParser_IncludeRoot.hpp">
       <Filter>Core\ClassCapabilities</Filter>
     </ClInclude>
+    <ClInclude Include="..\Core\Maths\Maths.hpp">
+      <Filter>Core\Maths</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Core\Maths\Vec2f.hpp">
+      <Filter>Core\Maths</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Core">
@@ -240,6 +249,9 @@
     </Filter>
     <Filter Include="Core\Actions\Basic">
       <UniqueIdentifier>{a48cb751-f1b2-4eda-876a-0b8452591db8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Maths">
+      <UniqueIdentifier>{4c3a694f-3af3-475f-9222-2cb15ea48c6c}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
