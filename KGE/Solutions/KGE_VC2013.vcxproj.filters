@@ -38,9 +38,6 @@
     <ClCompile Include="..\Core\Components\Basic\ComponentCameraLayer.cpp">
       <Filter>Core\Components\Basic</Filter>
     </ClCompile>
-    <ClCompile Include="..\Core\Components\Basic\ComponentGame.cpp">
-      <Filter>Core\Components\Basic</Filter>
-    </ClCompile>
     <ClCompile Include="..\Core\Components\Basic\ComponentLayer.cpp">
       <Filter>Core\Components\Basic</Filter>
     </ClCompile>
@@ -102,9 +99,6 @@
       <Filter>Core\Data</Filter>
     </ClInclude>
     <ClInclude Include="..\Core\Components\Basic\ComponentCameraLayer.hpp">
-      <Filter>Core\Components\Basic</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Core\Components\Basic\ComponentGame.hpp">
       <Filter>Core\Components\Basic</Filter>
     </ClInclude>
     <ClInclude Include="..\Core\Components\Basic\ComponentLayer.hpp">
@@ -253,5 +247,13 @@
     <Filter Include="Core\Maths">
       <UniqueIdentifier>{4c3a694f-3af3-475f-9222-2cb15ea48c6c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Assets">
+      <UniqueIdentifier>{016dc73a-faed-46f2-829b-581d971ff9b8}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <Xml Include="..\Assets\test.xml">
+      <Filter>Assets</Filter>
+    </Xml>
   </ItemGroup>
 </Project>

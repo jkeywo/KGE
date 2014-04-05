@@ -274,7 +274,6 @@
     <ClCompile Include="..\Core\ClassCapabilities\Properties.cpp" />
     <ClCompile Include="..\Core\ClassCapabilities\XMLParser.cpp" />
     <ClCompile Include="..\Core\Components\Basic\ComponentCameraLayer.cpp" />
-    <ClCompile Include="..\Core\Components\Basic\ComponentGame.cpp" />
     <ClCompile Include="..\Core\Components\Basic\ComponentLayer.cpp" />
     <ClCompile Include="..\Core\Components\Basic\ComponentPanelLayer.cpp" />
     <ClCompile Include="..\Core\Components\Basic\ComponentUpdater.cpp" />
@@ -313,7 +312,6 @@
     <ClInclude Include="..\Core\ClassCapabilities\XMLParser_Include.hpp" />
     <ClInclude Include="..\Core\ClassCapabilities\XMLParser_IncludeRoot.hpp" />
     <ClInclude Include="..\Core\Components\Basic\ComponentCameraLayer.hpp" />
-    <ClInclude Include="..\Core\Components\Basic\ComponentGame.hpp" />
     <ClInclude Include="..\Core\Components\Basic\ComponentLayer.hpp" />
     <ClInclude Include="..\Core\Components\Basic\ComponentPanelLayer.hpp" />
     <ClInclude Include="..\Core\Components\Basic\ComponentUpdater.hpp" />
@@ -335,6 +333,9 @@
     <ClInclude Include="..\Core\Resources\FontManager.hpp" />
     <ClInclude Include="..\Core\Resources\TextureManager.hpp" />
     <ClInclude Include="..\KGE.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Xml Include="..\Assets\test.xml" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

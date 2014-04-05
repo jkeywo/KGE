@@ -2,7 +2,7 @@
 public:
 	typedef unordered_map<KGE::Hash, KGE::Property*, KGE::Hash::Hasher> propertycollection_t;
 	typedef pair<KGE::Hash, KGE::Property*> propertycollectionpair_t;
-	Data GetProperty(const Hash& xHash)
+	virtual Data GetProperty(const Hash& xHash)
 	{
 		propertycollection_t::iterator xIt = m_xProperties.find(xHash);
 		if (xIt != m_xProperties.end())
@@ -11,17 +11,15 @@ public:
 		}
 		return Data();
 	}
-	void SetProperty(const Hash& xHash, Data xData)
+	virtual bool SetProperty(const Hash& xHash, Data xData)
 	{
 		propertycollection_t::iterator xIt = m_xProperties.find(xHash);
 		if (xIt != m_xProperties.end())
 		{
 			xIt->second->SetData(xData);
+			return true;
 		}
-		else
-		{
-			RegisterProperty(new PropertyDataByValue(xHash, xData));
-		}
+		return false;
 	}
 
 protected:

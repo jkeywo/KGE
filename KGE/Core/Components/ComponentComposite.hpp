@@ -26,5 +26,12 @@ namespace KGE
 
 		virtual bool IsComposite() const { return true; }
 
+		virtual Data GetProperty(const Hash& xHash);
+		virtual bool SetProperty(const Hash& xHash, Data xData);
+		virtual void OnEvent(const KGE::Hash& xEventHash, KGE::eventparams_t& xEventParameters);
+
+		virtual ComponentUpdater* GetUpdater();
+		virtual ComponentLayer* GetLayer();
+
 	};
 };

@@ -63,9 +63,13 @@ namespace KGE
 		// allows TUIDs to be used as keys in collections
 		struct Hasher
 		{
-			size_t operator()( const TUID& xTUID ) const
+			size_t operator()(const TUID& xTUID) const
 			{
 				return xTUID.m_uTUID;
+			}
+			size_t operator()(const CachedReference& xRef) const
+			{
+				return xRef.m_uTargetTUID;
 			}
 		};
 

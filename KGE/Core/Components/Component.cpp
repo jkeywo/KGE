@@ -125,11 +125,36 @@ namespace KGE
 	}
 	Component* Component::GetParentByType(const Hash& xType)
 	{
+		if (m_pxParent)
+		{
+			if (m_pxParent->IsBaseOrDerivedClass(xType))
+			{
+				return m_pxParent;
+			}
+			return m_pxParent->GetParentByType(xType);
+		}
 		return NULL;
 	}
 	Component* Component::GetParentByName(const Hash& xName)
 	{
+		if (m_pxParent)
+		{
+			if (m_pxParent->GetName() == xName)
+			{
+				return m_pxParent;
+			}
+			return m_pxParent->GetParentByName(xName);
+		}
 		return NULL;
+	}
+
+	ComponentUpdater* Component::GetUpdater()
+	{
+		return m_pxParent ? m_pxParent->GetUpdater() : NULL;
+	}
+	ComponentLayer* Component::GetLayer()
+	{
+		return m_pxParent ? m_pxParent->GetLayer() : NULL;
 	}
 	
 	void Component::RegisterEvents()
