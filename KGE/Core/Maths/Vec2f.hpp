@@ -18,6 +18,9 @@ namespace KGE
 		Vec2f operator*(float fRHS) const;
 		void operator*=(float fRHS);
 
+		bool operator==(const Vec2f& xRHS) const;
+		bool operator!=(const Vec2f& xRHS) const;
+
 		void operator+=(const Vec2f& xRHS);
 		void operator-=(const Vec2f& xRHS);
 		Vec2f operator+(const Vec2f& xRHS) const;

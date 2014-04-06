@@ -30,6 +30,15 @@ namespace KGE
 		Y *= fRHS;
 	}
 
+	bool Vec2f::operator==(const Vec2f& xRHS) const
+	{
+		return X == xRHS.X && Y == xRHS.Y;
+	}
+	bool Vec2f::operator!=(const Vec2f& xRHS) const
+	{
+		return X != xRHS.X || Y != xRHS.Y;
+	}
+
 	void Vec2f::operator+=(const Vec2f& xRHS)
 	{
 		X += xRHS.X;

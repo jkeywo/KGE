@@ -11,5 +11,8 @@ namespace KGE
 	const Hash g_xHASH_ONDEACTIVATE("OnDeactivate");
 	const Hash g_xHASH_ONDESTROY("OnDestroy");
 
+	const Hash g_xHASH_ONUPDATE("OnUpdate");
+	const Hash g_xHASH_ONRENDER("OnRender");
+	const Hash g_xHASH_ONHANDLEINPUT("OnHandleInput");
 
 }

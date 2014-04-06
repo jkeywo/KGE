@@ -28,20 +28,9 @@ namespace KGE
 			}
 		};
 
-		ComponentWindowLayer(ComponentContainer* pxParent)
-			: parent_t(pxParent)
-			, m_pxWindow(NULL)
-			, m_bFullscreen(true)
-			, m_bNativeResolution(true)
-		{}
-		ComponentWindowLayer(xml_node<char>& xNode, ComponentContainer* pxParent)
-			: parent_t(xNode, pxParent)
-			, m_pxWindow(NULL)
-			, m_bFullscreen(true)
-			, m_bNativeResolution(true)
-		{}
-		virtual ~ComponentWindowLayer()
-		{}
+		ComponentWindowLayer(ComponentContainer* pxParent);
+		ComponentWindowLayer(xml_node<char>& xNode, ComponentContainer* pxParent);
+		virtual ~ComponentWindowLayer();
 
 		static void HandleInputAll();
 		static void RenderAll();

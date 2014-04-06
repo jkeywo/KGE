@@ -3,11 +3,34 @@
 
 namespace KGE
 {
+	STATIC_INITIALISE_RUN(ComponentWindowLayer)
+
 	unordered_set<ComponentWindowLayer*, ComponentWindowLayer::Hasher> ComponentWindowLayer::s_xAllWindows;
+
+	ComponentWindowLayer::ComponentWindowLayer(ComponentContainer* pxParent)
+		: parent_t(pxParent)
+		, m_pxWindow(NULL)
+		, m_bFullscreen(true)
+		, m_bNativeResolution(true)
+	{
+		s_xAllWindows.insert(this);
+	}
+	ComponentWindowLayer::ComponentWindowLayer(xml_node<char>& xNode, ComponentContainer* pxParent)
+		: parent_t(xNode, pxParent)
+		, m_pxWindow(NULL)
+		, m_bFullscreen(true)
+		, m_bNativeResolution(true)
+	{
+		s_xAllWindows.insert(this);
+	}
+	ComponentWindowLayer::~ComponentWindowLayer()
+	{
+		s_xAllWindows.erase(this);
+	}
 
 	void ComponentWindowLayer::HandleInputAll()
 	{
-		FOREACH_R(xIt, s_xAllWindows)
+		FOREACH(xIt, s_xAllWindows)
 		{
 			(*xIt)->HandleInput();
 		}
@@ -60,13 +83,13 @@ namespace KGE
 		{
 			m_pxWindow->clear(sf::Color::Black);
 			parent_t::Render(*m_pxWindow);
+			m_pxWindow->display();
 		}
 	}
 
 	void ComponentWindowLayer::OnActivate(eventparams_t& xEventParameters)
 	{
 		Component::OnActivate(xEventParameters); // deliberately skip parent_t
-		s_xAllWindows.insert(this);
 
 		sf::VideoMode xVideoMode = m_bNativeResolution 
 			? sf::VideoMode::getDesktopMode()
@@ -76,7 +99,6 @@ namespace KGE
 	void ComponentWindowLayer::OnDeactivate(eventparams_t& xEventParameters)
 	{
 		Component::OnDeactivate(xEventParameters); // deliberately skip parent_t
-		s_xAllWindows.erase(this);
 
 		delete m_pxWindow;
 		m_pxWindow = NULL;
@@ -96,7 +118,7 @@ namespace KGE
 	void ComponentWindowLayer::ProcessYResolution(xml_attribute<char>& xY)
 	{
 		stringstream xStream(xY.value());
-		xStream >> m_iXResolution;
+		xStream >> m_iYResolution;
 		m_bNativeResolution = false;
 	}
 

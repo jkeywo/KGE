@@ -58,12 +58,12 @@ namespace KGE
 		const Hash& GetName() { return m_xName; }
 		State GetState() { return m_eState; }
 
-		virtual void OnCreate(eventparams_t& xEventParameters) { m_eState = Dormant; }
-		virtual void OnActivate(eventparams_t& xEventParameters) { m_eState = Active; }
-		virtual void OnDeactivate(eventparams_t& xEventParameters) { m_eState = Dormant; }
-		virtual void OnDestroy(eventparams_t& xEventParameters) { m_eState = Destroyed; s_xDestroyedComponents.push_back(this); }
+		virtual void OnCreate(eventparams_t& xEventParameters);
+		virtual void OnActivate(eventparams_t& xEventParameters);
+		virtual void OnDeactivate(eventparams_t& xEventParameters);
+		virtual void OnDestroy(eventparams_t& xEventParameters);
 
-		virtual bool HandleInput(sf::Event& xEvent, sf::Window* pxWindow ) { return false; }
+		virtual bool HandleInput(sf::Event& xEvent, sf::Window* pxWindow) { return false; }
 		virtual void Render(sf::RenderTarget& xTarget) {}
 		virtual void Update(float fDT) {}
 

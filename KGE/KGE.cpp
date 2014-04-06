@@ -18,10 +18,7 @@ int main()
 	xDoc.parse<0>(szXMLbuffer);
 
 	// create game from XML
-	bool bFullscreen = false;
-	sf::Vector2i xWindowedSize(800, 600);
 	KGE::Component* pxRootObject = KGE::Component::Create(*xDoc.first_node(), NULL);
-	sf::RenderWindow xWindow(sf::VideoMode(xWindowedSize.x, xWindowedSize.y), "KGL (c)2014");
 
 	// run game
 	if (pxRootObject)
@@ -29,17 +26,17 @@ int main()
 		KGE::eventparams_t xBlankParams;
 		pxRootObject->OnActivate(xBlankParams);
 		sf::Clock xClock;
-		while (pxRootObject->GetState() != KGE::Component::Destroyed)
+		while (pxRootObject->GetState() == KGE::Component::Active)
 		{
+			KGE::Component::DeleteDestroyed();
+
 			float fDT = xClock.restart().asSeconds();
 
 			KGE::ComponentWindowLayer::HandleInputAll();
 			KGE::ComponentUpdater::UpdateAll(fDT);
 			KGE::ComponentWindowLayer::RenderAll();
-
-			KGE::Component::DeleteDestroyed();
 		}
-		pxRootObject->OnDeactivate(xBlankParams);
+		KGE::Component::DeleteDestroyed();
 	}
 
 	return 0;

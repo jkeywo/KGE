@@ -30,7 +30,8 @@ protected:
 	{
 		while (m_xEvents.begin() != m_xEvents.end())
 		{
-			delete m_xEvents.begin()->second;
+			KGE::Event<root_t>* pxEvent = m_xEvents.begin()->second;
+			delete pxEvent;
 			m_xEvents.erase(m_xEvents.begin());
 		}
 	}

@@ -10,10 +10,12 @@ namespace KGE
 
 	void Component::DeleteDestroyed()
 	{
-		while( s_xDestroyedComponents.front() )
+		while (s_xDestroyedComponents.begin() != s_xDestroyedComponents.end())
 		{
-			assert( s_xDestroyedComponents.front()->m_eState == Destroyed );
-			delete s_xDestroyedComponents.front();
+			Component* pxDelete = s_xDestroyedComponents.front();
+			assert(pxDelete->m_eState == Destroyed);
+			delete pxDelete;
+			s_xDestroyedComponents.erase(s_xDestroyedComponents.begin());
 		}
 	}
 
@@ -165,6 +167,32 @@ namespace KGE
 		RegisterEvent(g_xHASH_ONDESTROY, boost::bind(&root_t::OnDestroy, this, _1));
 	}
 
+	void Component::OnCreate(eventparams_t& xEventParameters) 
+	{ 
+		m_eState = Dormant;
+	}
+	void Component::OnActivate(eventparams_t& xEventParameters) 
+	{ 
+		m_eState = Active;
+	}
+	void Component::OnDeactivate(eventparams_t& xEventParameters) 
+	{ 
+		m_eState = Dormant;
+	}
+	void Component::OnDestroy(eventparams_t& xEventParameters)
+	{
+		if (m_eState == Destroyed)
+		{
+			return;
+		}
+		else if (m_eState == Active)
+		{
+			OnDeactivate(xEventParameters);
+		}
+		m_eState = Destroyed;
+		s_xDestroyedComponents.push_back(this);
+	}
+
 	void Component::ProcessName( xml_attribute<char>& xName )
 	{
 		m_xName = Hash( xName.value() );
@@ -204,6 +232,8 @@ namespace KGE
 
 	/////////////////////////////////////////////////////////////////////////
 	//	ComponentContainer
+
+	STATIC_INITIALISE_RUN(ComponentContainer)
 
 	void ComponentContainer::OnActivate(eventparams_t& xEventParameters)
 	{
