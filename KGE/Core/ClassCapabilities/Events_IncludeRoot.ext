@@ -1,0 +1,65 @@
+	
+public:
+	virtual void OnEvent(const KGE::Hash& xEventHash, KGE::eventparams_t& xEventParameters)
+	{
+		KGE::Event<root_t>::collection_t::iterator xIt = m_xEvents.find(xEventHash);
+		if (xIt != m_xEvents.end())
+		{
+			xIt->second->Execute( xEventParameters );
+		}
+	}
+	virtual KGE::Event<root_t>* GetEvent(const KGE::Hash& xEventHash)
+	{
+		KGE::Event<root_t>::collection_t::iterator xIt = m_xEvents.find(xEventHash);
+		if (xIt != m_xEvents.end())
+		{
+			return xIt->second;
+		}
+		return NULL;
+	}
+
+protected:
+	void RegisterEventSignal(KGE::EventSignal<root_t>* pxSignal)
+	{
+		m_xEventSignals.insert( pxSignal );
+	}
+	void ActivateSignals()
+	{
+		FOREACH(xIt, m_xEventSignals)
+		{
+			(*xIt)->Activate();
+		}
+	}
+	void DeactivateSignals()
+	{
+		FOREACH(xIt, m_xEventSignals)
+		{
+			(*xIt)->Deactivate();
+		}
+	}
+
+	void RegisterEvent(const Hash& xHash, std::function<void(KGE::eventparams_t&)> xCallback)
+	{
+		RegisterEvent(new KGE::Event<root_t>(xHash, *this, xCallback));
+	}
+	void RegisterEvent(KGE::Event<root_t>* pxEvent)
+	{
+		m_xEvents.insert(KGE::Event<root_t>::collectionpair_t(pxEvent->GetHash(), pxEvent));
+	}
+	void ClearEvents()
+	{
+		while (m_xEvents.begin() != m_xEvents.end())
+		{
+			KGE::Event<root_t>* pxEvent = m_xEvents.begin()->second;
+			delete pxEvent;
+			m_xEvents.erase(m_xEvents.begin());
+		}
+		while (m_xEventSignals.begin() != m_xEventSignals.end())
+		{
+			KGE::EventSignal<root_t>* pxSignal = *m_xEventSignals.begin();
+			delete pxSignal;
+			m_xEventSignals.erase(m_xEventSignals.begin());
+		}
+	}
+	KGE::Event<root_t>::collection_t m_xEvents;
+	set<KGE::EventSignal<root_t>*, KGE::EventSignal<root_t>::Comparer> m_xEventSignals;
