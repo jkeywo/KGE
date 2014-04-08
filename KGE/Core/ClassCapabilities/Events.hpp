@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Core/Actions/Action.hpp"
+#include "Core/ClassCapabilities/EventSignal.hpp"
 #include "Core/Data/CommonHashes.hpp"
 
 namespace KGE
@@ -22,23 +22,27 @@ namespace KGE
 		{
 		}
 
-		void RegisterAction(Action* pxAction)
+		void RegisterSignal(EventSignal<owner_t>* pxSignal)
 		{
-			m_xActions.insert(pxAction);
+			m_xSignals.insert(pxSignal);
+		}
+		void UnregisterSignal(EventSignal<owner_t>* pxSignal)
+		{
+			m_xSignals.erase(pxSignal);
 		}
 		void Execute(eventparams_t& xEventParameters)
 		{
 			xEventParameters.insert(eventparamspair_t(g_xHASH_SOURCE, Data(&m_xCaller)));
 			bool bCallbackDone = false;
-			FOREACH(xIt, m_xActions)
+			FOREACH(xIt, m_xSignals)
 			{
-				Action* pxAction = (*xIt);
-				if (!bCallbackDone && pxAction->GetPriority() < 0.0f)
+				EventSignal<owner_t>* pxSignal = (*xIt);
+				if (!bCallbackDone && pxSignal->GetPriority() < 0.0f)
 				{
 					m_xCallback(xEventParameters);
 					bCallbackDone = true;
 				}
-				pxAction->Activate(xEventParameters);
+				pxSignal->Execute(xEventParameters);
 			}
 			if (!bCallbackDone)
 			{
@@ -50,6 +54,6 @@ namespace KGE
 		Hash m_xHash;
 		owner_t& m_xCaller;
 		std::function<void(eventparams_t&)> m_xCallback;
-		std::set<Action*, typename Action::Comparer> m_xActions;
+		std::set<EventSignal<owner_t>*, typename EventSignal<owner_t>::Comparer> m_xSignals;
 	};
 };

@@ -9,21 +9,21 @@ namespace KGE
 	class ComponentCollection : public ComponentContainer
 	{
 		METACLASS_CHILDDATA(ComponentCollection, ComponentContainer, "Collection")
-		#include "Core/Components/Component_Include.hpp"
+		#include "Core/Components/Component_Include.ext"
 
 		STATIC_INITIALISE_START
 		{
-			CLASSFACTORY_REGISTER_1ARG(ComponentContainer*)
-			CLASSFACTORY_REGISTERXML_1ARG(ComponentContainer*)
+			CLASSFACTORY_REGISTER_1ARG(TUID<Component>::CachedReference)
+			CLASSFACTORY_REGISTERXML_1ARG(TUID<Component>::CachedReference)
 		}
 		STATIC_INITIALISE_END
 
 	public:
-		ComponentCollection(ComponentContainer* pxParent)
-			: parent_t(pxParent)
+		ComponentCollection(TUID<Component>::CachedReference xParent)
+			: parent_t(xParent)
 		{}
-		ComponentCollection(xml_node<char>& xNode, ComponentContainer* pxParent)
-			: parent_t(xNode, pxParent)
+		ComponentCollection(xml_node<char>& xNode, TUID<Component>::CachedReference xParent)
+			: parent_t(xNode, xParent)
 		{}
 
 		virtual bool IsCollection() const { return true; }

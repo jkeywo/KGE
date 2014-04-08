@@ -7,12 +7,12 @@ namespace KGE
 	class ComponentUpdater : public Component
 	{
 		METACLASS_CHILDDATA(ComponentUpdater, Component, "Updater")
-		#include "Core/Components/Component_Include.hpp"
+		#include "Core/Components/Component_Include.ext"
 
 		STATIC_INITIALISE_START
 		{
-			CLASSFACTORY_REGISTER_1ARG(ComponentContainer*)
-			CLASSFACTORY_REGISTERXML_1ARG(ComponentContainer*)
+			CLASSFACTORY_REGISTER_1ARG(TUID<Component>::CachedReference)
+			CLASSFACTORY_REGISTERXML_1ARG(TUID<Component>::CachedReference)
 		}
 		STATIC_INITIALISE_END
 
@@ -26,11 +26,11 @@ namespace KGE
 			}
 		};
 
-		ComponentUpdater(ComponentContainer* pxParent)
-			: parent_t(pxParent)
+		ComponentUpdater(TUID<Component>::CachedReference xParent)
+			: parent_t(xParent)
 		{}
-		ComponentUpdater(xml_node<char>& xNode, ComponentContainer* pxParent)
-			: parent_t(xNode, pxParent)
+		ComponentUpdater(xml_node<char>& xNode, TUID<Component>::CachedReference xParent)
+			: parent_t(xNode, xParent)
 		{}
 		virtual ~ComponentUpdater()
 		{}

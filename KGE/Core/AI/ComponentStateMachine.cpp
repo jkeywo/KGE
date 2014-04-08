@@ -48,7 +48,7 @@ namespace KGE
 		unordered_map< Hash, xml_node<char>*, Hash::Hasher >::iterator xIt = m_xStates.find(m_xInitialState);
 		if (xIt != m_xStates.end())
 		{
-			m_pxCurrentState = ComponentState::Create(*xIt->second, this);
+			m_pxCurrentState = ComponentState::Create(*xIt->second, m_xTUID.GetCachedReference());
 			m_pxCurrentState->OnActivate(xEventParameters);
 		}
 	}

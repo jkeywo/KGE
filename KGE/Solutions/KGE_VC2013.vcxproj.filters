@@ -71,17 +71,11 @@
     <ClCompile Include="..\Core\ClassCapabilities\Events.cpp">
       <Filter>Core\ClassCapabilities</Filter>
     </ClCompile>
-    <ClCompile Include="..\Core\Actions\Action.cpp">
-      <Filter>Core\Actions</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Core\Actions\Basic\ActionSignal.cpp">
-      <Filter>Core\Actions\Basic</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Core\Actions\Basic\ActionLua.cpp">
-      <Filter>Core\Actions\Basic</Filter>
-    </ClCompile>
     <ClCompile Include="..\Core\Maths\Vec2f.cpp">
       <Filter>Core\Maths</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Core\ClassCapabilities\EventSignal.cpp">
+      <Filter>Core\ClassCapabilities</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -161,43 +155,10 @@
     <ClInclude Include="..\Core\ClassCapabilities\XMLParser.hpp">
       <Filter>Core\ClassCapabilities</Filter>
     </ClInclude>
-    <ClInclude Include="..\Core\Components\Component_Include.hpp">
-      <Filter>Core\Components</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Core\ClassCapabilities\MetaClass_IncludeRoot.hpp">
-      <Filter>Core\ClassCapabilities</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Core\ClassCapabilities\MetaClass_Include.hpp">
-      <Filter>Core\ClassCapabilities</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Core\ClassCapabilities\Properties_IncludeRoot.hpp">
-      <Filter>Core\ClassCapabilities</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Core\ClassCapabilities\Events_IncludeRoot.hpp">
-      <Filter>Core\ClassCapabilities</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Core\Actions\Action_Include.hpp">
-      <Filter>Core\Actions</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Core\Actions\Action.hpp">
-      <Filter>Core\Actions</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Core\Actions\Basic\ActionLua.hpp">
-      <Filter>Core\Actions\Basic</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Core\Actions\Basic\ActionSignal.hpp">
-      <Filter>Core\Actions\Basic</Filter>
-    </ClInclude>
     <ClInclude Include="..\Core\Data\CommonHashes.hpp">
       <Filter>Core\Data</Filter>
     </ClInclude>
     <ClInclude Include="..\Core\ClassCapabilities\MetaClass.hpp">
-      <Filter>Core\ClassCapabilities</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Core\ClassCapabilities\XMLParser_Include.hpp">
-      <Filter>Core\ClassCapabilities</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Core\ClassCapabilities\XMLParser_IncludeRoot.hpp">
       <Filter>Core\ClassCapabilities</Filter>
     </ClInclude>
     <ClInclude Include="..\Core\Maths\Maths.hpp">
@@ -205,6 +166,30 @@
     </ClInclude>
     <ClInclude Include="..\Core\Maths\Vec2f.hpp">
       <Filter>Core\Maths</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Core\ClassCapabilities\EventSignal.hpp">
+      <Filter>Core\ClassCapabilities</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Core\ClassCapabilities\Events_IncludeRoot.ext">
+      <Filter>Core\ClassCapabilities</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Core\ClassCapabilities\MetaClass_Include.ext">
+      <Filter>Core\ClassCapabilities</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Core\ClassCapabilities\MetaClass_IncludeRoot.ext">
+      <Filter>Core\ClassCapabilities</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Core\ClassCapabilities\Properties_IncludeRoot.ext">
+      <Filter>Core\ClassCapabilities</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Core\ClassCapabilities\XMLParser_Include.ext">
+      <Filter>Core\ClassCapabilities</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Core\ClassCapabilities\XMLParser_IncludeRoot.ext">
+      <Filter>Core\ClassCapabilities</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Core\Components\Component_Include.ext">
+      <Filter>Core\Components</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -237,12 +222,6 @@
     </Filter>
     <Filter Include="Core\Interface">
       <UniqueIdentifier>{9ac4d078-1d2b-4720-9ad6-bf5249e86543}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Core\Actions">
-      <UniqueIdentifier>{ea8411e8-81ef-4350-ba8b-6213c5879278}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Core\Actions\Basic">
-      <UniqueIdentifier>{a48cb751-f1b2-4eda-876a-0b8452591db8}</UniqueIdentifier>
     </Filter>
     <Filter Include="Core\Maths">
       <UniqueIdentifier>{4c3a694f-3af3-475f-9222-2cb15ea48c6c}</UniqueIdentifier>

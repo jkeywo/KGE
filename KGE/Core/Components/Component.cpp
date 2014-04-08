@@ -1,7 +1,7 @@
 #include "KGE.hpp"
 #include "Core/Components/Component.hpp"
 
-#include "Core/Actions/Action.hpp"
+#include "Core/ClassCapabilities/EventSignal.hpp"
 
 namespace KGE
 {
@@ -19,17 +19,17 @@ namespace KGE
 		}
 	}
 
-	Component::Component(ComponentContainer* pxParent)
+	Component::Component(TUID<Component>::CachedReference xParent)
 		: m_xTUID(*this)
-		, m_pxParent(pxParent)
+		, m_xParent(xParent)
 		, m_eState(Unset)
 		, m_pxXMLNode(NULL)
 	{
 		RegisterEvents();
 	}
-	Component::Component(xml_node<char>& xNode, ComponentContainer* pxParent)
+	Component::Component(xml_node<char>& xNode, TUID<Component>::CachedReference xParent)
 		: m_xTUID(*this)
-		, m_pxParent(pxParent)
+		, m_xParent(xParent)
 		, m_eState(Unset)
 		, m_pxXMLNode(&xNode)
 	{
@@ -43,6 +43,14 @@ namespace KGE
 
 	void Component::OnEventByPath(const char* szPath, eventparams_t& xEventParameters)
 	{
+		Event<Component>* pxEvent = GetEventByPath(szPath);
+		if (pxEvent)
+		{
+			pxEvent->Execute(xEventParameters);
+		}
+	}
+	Event<Component>* Component::GetEventByPath(const char* szPath)
+	{
 		Hash xToken;
 		bool bStringEnd = false;
 		Component* pxTarget = this;
@@ -55,14 +63,14 @@ namespace KGE
 			if (bStringEnd)
 			{
 				assert(false);
-				return;
+				return NULL;
 			}
 		}
 		bStringEnd = xToken.FromToken('.', szPath);
 		if (bStringEnd)
 		{
 			// this should be an event
-			pxTarget->OnEvent(xToken, xEventParameters);
+			return pxTarget->GetEvent(xToken);
 		}
 		else
 		{
@@ -81,10 +89,12 @@ namespace KGE
 			assert(xData.GetType() == Data::COMPONENT);
 			if (xData.AsComponent())
 			{
-				return xData.AsComponent()->OnEventByPath(szPath, xEventParameters);
+				return xData.AsComponent()->GetEventByPath(szPath);
 			}
 		}
+		return NULL;
 	}
+
 	Data Component::GetPropertyByPath(const char* szPath)
 	{
 		Hash xToken;
@@ -127,36 +137,36 @@ namespace KGE
 	}
 	Component* Component::GetParentByType(const Hash& xType)
 	{
-		if (m_pxParent)
+		if (m_xParent())
 		{
-			if (m_pxParent->IsBaseOrDerivedClass(xType))
+			if (m_xParent()->IsBaseOrDerivedClass(xType))
 			{
-				return m_pxParent;
+				return m_xParent();
 			}
-			return m_pxParent->GetParentByType(xType);
+			return m_xParent()->GetParentByType(xType);
 		}
 		return NULL;
 	}
 	Component* Component::GetParentByName(const Hash& xName)
 	{
-		if (m_pxParent)
+		if (m_xParent())
 		{
-			if (m_pxParent->GetName() == xName)
+			if (m_xParent()->GetName() == xName)
 			{
-				return m_pxParent;
+				return m_xParent();
 			}
-			return m_pxParent->GetParentByName(xName);
+			return m_xParent()->GetParentByName(xName);
 		}
 		return NULL;
 	}
 
 	ComponentUpdater* Component::GetUpdater()
 	{
-		return m_pxParent ? m_pxParent->GetUpdater() : NULL;
+		return m_xParent() ? m_xParent()->GetUpdater() : NULL;
 	}
 	ComponentLayer* Component::GetLayer()
 	{
-		return m_pxParent ? m_pxParent->GetLayer() : NULL;
+		return m_xParent() ? m_xParent()->GetLayer() : NULL;
 	}
 	
 	void Component::RegisterEvents()
@@ -174,10 +184,12 @@ namespace KGE
 	void Component::OnActivate(eventparams_t& xEventParameters) 
 	{ 
 		m_eState = Active;
+		ActivateSignals();
 	}
 	void Component::OnDeactivate(eventparams_t& xEventParameters) 
 	{ 
 		m_eState = Dormant;
+		DeactivateSignals();
 	}
 	void Component::OnDestroy(eventparams_t& xEventParameters)
 	{
@@ -197,37 +209,9 @@ namespace KGE
 	{
 		m_xName = Hash( xName.value() );
 	}
-	void Component::ProcessOnCreate( xml_node<char>& xEvent )
+	void Component::ProcessSignal(xml_node<char>& xEvent)
 	{
-		Action* pxAction = Action::Create(xEvent);
-		if(pxAction)
-		{
-			RegisterEventAction(Hash("OnCreate"), pxAction);
-		}
-	}
-	void Component::ProcessOnActivate( xml_node<char>& xEvent )
-	{
-		Action* pxAction = Action::Create(xEvent);
-		if(pxAction)
-		{
-			RegisterEventAction(Hash("OnActivate"), pxAction);
-		}
-	}
-	void Component::ProcessOnDeactivate( xml_node<char>& xEvent )
-	{
-		Action* pxAction = Action::Create(xEvent);
-		if(pxAction)
-		{
-			RegisterEventAction(Hash("OnDeactivate"), pxAction);
-		}
-	}
-	void Component::ProcessOnDestroy( xml_node<char>& xEvent )
-	{
-		Action* pxAction = Action::Create(xEvent);
-		if(pxAction)
-		{
-			RegisterEventAction(Hash("OnDestroy"), pxAction);
-		}
+		RegisterEventSignal(new EventSignal<root_t>(xEvent, *this));
 	}
 
 	/////////////////////////////////////////////////////////////////////////
@@ -262,7 +246,7 @@ namespace KGE
 
 	void ComponentContainer::PopulateComponent(xml_node<char>& xComponentNode)
 	{
-		Component* pxRootObject = Component::Create(xComponentNode, this);
+		Component* pxRootObject = Component::Create(xComponentNode, m_xTUID.GetCachedReference());
 		if (pxRootObject)
 		{
 			m_xComponents.insert(pxRootObject);

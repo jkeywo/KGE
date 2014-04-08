@@ -44,9 +44,9 @@ namespace KGE
 	void ComponentLayer::OnActivate(eventparams_t& xEventParameters)
 	{
 		parent_t::OnActivate(xEventParameters);
-		if (m_pxParent)
+		if (m_xParent())
 		{
-			ComponentLayer* pxLayer = m_pxParent->GetLayer();
+			ComponentLayer* pxLayer = m_xParent()->GetLayer();
 			if (pxLayer)
 			{
 				pxLayer->RegisterHandleInput(this);
@@ -57,9 +57,9 @@ namespace KGE
 	void ComponentLayer::OnDeactivate(eventparams_t& xEventParameters)
 	{
 		parent_t::OnDeactivate(xEventParameters);
-		if (m_pxParent)
+		if (m_xParent())
 		{
-			ComponentLayer* pxLayer = m_pxParent->GetLayer();
+			ComponentLayer* pxLayer = m_xParent()->GetLayer();
 			if (pxLayer)
 			{
 				pxLayer->UnregisterHandleInput(this);

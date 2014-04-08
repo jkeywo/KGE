@@ -7,11 +7,11 @@ namespace KGE
 	class ComponentWindowLayer : public ComponentLayer
 	{
 		METACLASS_CHILDDATA(ComponentWindowLayer, ComponentLayer, "WindowLayer")
-		#include "Core/Components/Component_Include.hpp"
+		#include "Core/Components/Component_Include.ext"
 		STATIC_INITIALISE_START
 		{
-			CLASSFACTORY_REGISTER_1ARG(ComponentContainer*)
-			CLASSFACTORY_REGISTERXML_1ARG(ComponentContainer*)
+			CLASSFACTORY_REGISTER_1ARG(TUID<Component>::CachedReference)
+			CLASSFACTORY_REGISTERXML_1ARG(TUID<Component>::CachedReference)
 			XMLPARSER_REGISTERATTRIBUTE("Fullscreen", ProcessFullscreen);
 			XMLPARSER_REGISTERATTRIBUTE("XResolution", ProcessXResolution);
 			XMLPARSER_REGISTERATTRIBUTE("YResolution", ProcessYResolution);
@@ -28,8 +28,8 @@ namespace KGE
 			}
 		};
 
-		ComponentWindowLayer(ComponentContainer* pxParent);
-		ComponentWindowLayer(xml_node<char>& xNode, ComponentContainer* pxParent);
+		ComponentWindowLayer(TUID<Component>::CachedReference xParent);
+		ComponentWindowLayer(xml_node<char>& xNode, TUID<Component>::CachedReference xParent);
 		virtual ~ComponentWindowLayer();
 
 		static void HandleInputAll();

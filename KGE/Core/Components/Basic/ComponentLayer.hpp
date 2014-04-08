@@ -7,12 +7,12 @@ namespace KGE
 	class ComponentLayer : public Component
 	{
 		METACLASS_CHILDDATA(ComponentLayer, Component, "Layer")
-		#include "Core/Components/Component_Include.hpp"
+		#include "Core/Components/Component_Include.ext"
 
 		STATIC_INITIALISE_START
 		{
-			CLASSFACTORY_REGISTER_1ARG(ComponentContainer*)
-			CLASSFACTORY_REGISTERXML_1ARG(ComponentContainer*)
+			CLASSFACTORY_REGISTER_1ARG(TUID<Component>::CachedReference)
+			CLASSFACTORY_REGISTERXML_1ARG(TUID<Component>::CachedReference)
 		}
 		STATIC_INITIALISE_END
 
@@ -20,11 +20,11 @@ namespace KGE
 		typedef std::function<bool(sf::Event& xEvent)> handleinputcallback_t;
 		typedef std::function<void(sf::RenderTarget&)> rendercallback_t;
 
-		ComponentLayer(ComponentContainer* pxParent)
-			: parent_t(pxParent)
+		ComponentLayer(TUID<Component>::CachedReference xParent)
+			: parent_t(xParent)
 		{}
-		ComponentLayer(xml_node<char>& xNode, ComponentContainer* pxParent)
-			: parent_t(xNode, pxParent)
+		ComponentLayer(xml_node<char>& xNode, TUID<Component>::CachedReference xParent)
+			: parent_t(xNode, xParent)
 		{}
 
 		virtual ComponentLayer* GetLayer() { return this; }

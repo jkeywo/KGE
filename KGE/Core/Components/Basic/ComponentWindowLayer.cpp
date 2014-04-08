@@ -7,16 +7,16 @@ namespace KGE
 
 	unordered_set<ComponentWindowLayer*, ComponentWindowLayer::Hasher> ComponentWindowLayer::s_xAllWindows;
 
-	ComponentWindowLayer::ComponentWindowLayer(ComponentContainer* pxParent)
-		: parent_t(pxParent)
+	ComponentWindowLayer::ComponentWindowLayer(TUID<Component>::CachedReference xParent)
+		: parent_t(xParent)
 		, m_pxWindow(NULL)
 		, m_bFullscreen(true)
 		, m_bNativeResolution(true)
 	{
 		s_xAllWindows.insert(this);
 	}
-	ComponentWindowLayer::ComponentWindowLayer(xml_node<char>& xNode, ComponentContainer* pxParent)
-		: parent_t(xNode, pxParent)
+	ComponentWindowLayer::ComponentWindowLayer(xml_node<char>& xNode, TUID<Component>::CachedReference xParent)
+		: parent_t(xNode, xParent)
 		, m_pxWindow(NULL)
 		, m_bFullscreen(true)
 		, m_bNativeResolution(true)
@@ -65,9 +65,9 @@ namespace KGE
 				// "close requested" event: we close the window
 				m_pxWindow->close();
 				eventparams_t xBlankParams;
-				if (m_pxParent && m_pxParent->IsComposite())
+				if (m_xParent() && m_xParent()->IsComposite())
 				{
-					m_pxParent->OnEvent(g_xHASH_ONDESTROY, xBlankParams);
+					m_xParent()->OnEvent(g_xHASH_ONDESTROY, xBlankParams);
 				}
 				else
 				{

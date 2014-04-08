@@ -18,7 +18,8 @@ int main()
 	xDoc.parse<0>(szXMLbuffer);
 
 	// create game from XML
-	KGE::Component* pxRootObject = KGE::Component::Create(*xDoc.first_node(), NULL);
+	KGE::TUID<KGE::Component>::CachedReference xNULL;
+	KGE::Component* pxRootObject = KGE::Component::Create(*xDoc.first_node(), xNULL);
 
 	// run game
 	if (pxRootObject)

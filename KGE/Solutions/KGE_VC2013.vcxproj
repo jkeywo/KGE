@@ -268,15 +268,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\Core\Actions\Action.cpp" />
-    <ClCompile Include="..\Core\Actions\Basic\ActionLua.cpp" />
-    <ClCompile Include="..\Core\Actions\Basic\ActionSignal.cpp" />
     <ClCompile Include="..\Core\AI\ComponentState.cpp" />
     <ClCompile Include="..\Core\AI\ComponentStateMachine.cpp" />
     <ClCompile Include="..\Core\Audio\ComponentAudioClip.cpp" />
     <ClCompile Include="..\Core\Audio\ComponentMusic.cpp" />
     <ClCompile Include="..\Core\ClassCapabilities\ClassFactory.cpp" />
     <ClCompile Include="..\Core\ClassCapabilities\Events.cpp" />
+    <ClCompile Include="..\Core\ClassCapabilities\EventSignal.cpp" />
     <ClCompile Include="..\Core\ClassCapabilities\Properties.cpp" />
     <ClCompile Include="..\Core\ClassCapabilities\XMLParser.cpp" />
     <ClCompile Include="..\Core\Components\Basic\ComponentCameraLayer.cpp" />
@@ -298,25 +296,22 @@
     <ClCompile Include="..\KGE.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\Core\Actions\Action.hpp" />
-    <ClInclude Include="..\Core\Actions\Action_Include.hpp" />
-    <ClInclude Include="..\Core\Actions\Basic\ActionLua.hpp" />
-    <ClInclude Include="..\Core\Actions\Basic\ActionSignal.hpp" />
     <ClInclude Include="..\Core\AI\ComponentState.hpp" />
     <ClInclude Include="..\Core\AI\ComponentStateMachine.hpp" />
     <ClInclude Include="..\Core\Audio\ComponentAudioClip.hpp" />
     <ClInclude Include="..\Core\Audio\ComponentMusic.hpp" />
     <ClInclude Include="..\Core\ClassCapabilities\ClassFactory.hpp" />
     <ClInclude Include="..\Core\ClassCapabilities\Events.hpp" />
-    <ClInclude Include="..\Core\ClassCapabilities\Events_IncludeRoot.hpp" />
+    <ClInclude Include="..\Core\ClassCapabilities\EventSignal.hpp" />
+    <ClInclude Include="..\Core\ClassCapabilities\Events_IncludeRoot.ext" />
     <ClInclude Include="..\Core\ClassCapabilities\MetaClass.hpp" />
-    <ClInclude Include="..\Core\ClassCapabilities\MetaClass_Include.hpp" />
-    <ClInclude Include="..\Core\ClassCapabilities\MetaClass_IncludeRoot.hpp" />
+    <ClInclude Include="..\Core\ClassCapabilities\MetaClass_Include.ext" />
+    <ClInclude Include="..\Core\ClassCapabilities\MetaClass_IncludeRoot.ext" />
     <ClInclude Include="..\Core\ClassCapabilities\Properties.hpp" />
-    <ClInclude Include="..\Core\ClassCapabilities\Properties_IncludeRoot.hpp" />
+    <ClInclude Include="..\Core\ClassCapabilities\Properties_IncludeRoot.ext" />
     <ClInclude Include="..\Core\ClassCapabilities\XMLParser.hpp" />
-    <ClInclude Include="..\Core\ClassCapabilities\XMLParser_Include.hpp" />
-    <ClInclude Include="..\Core\ClassCapabilities\XMLParser_IncludeRoot.hpp" />
+    <ClInclude Include="..\Core\ClassCapabilities\XMLParser_Include.ext" />
+    <ClInclude Include="..\Core\ClassCapabilities\XMLParser_IncludeRoot.ext" />
     <ClInclude Include="..\Core\Components\Basic\ComponentCameraLayer.hpp" />
     <ClInclude Include="..\Core\Components\Basic\ComponentLayer.hpp" />
     <ClInclude Include="..\Core\Components\Basic\ComponentPanelLayer.hpp" />
@@ -325,7 +320,7 @@
     <ClInclude Include="..\Core\Components\Component.hpp" />
     <ClInclude Include="..\Core\Components\ComponentCollection.hpp" />
     <ClInclude Include="..\Core\Components\ComponentComposite.hpp" />
-    <ClInclude Include="..\Core\Components\Component_Include.hpp" />
+    <ClInclude Include="..\Core\Components\Component_Include.ext" />
     <ClInclude Include="..\Core\Data\CommonHashes.hpp" />
     <ClInclude Include="..\Core\Data\Data.hpp" />
     <ClInclude Include="..\Core\Data\TUID.hpp" />

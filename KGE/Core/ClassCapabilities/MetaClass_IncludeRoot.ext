@@ -77,13 +77,13 @@ public:
 #endif
 
 #ifdef SUPPORT_XML
-#include "Core/ClassCapabilities/XMLParser_IncludeRoot.hpp"
+#include "Core/ClassCapabilities/XMLParser_IncludeRoot.ext"
 #endif
 #ifdef SUPPORT_EVENTS
-#include "Core/ClassCapabilities/Events_IncludeRoot.hpp"
+#include "Core/ClassCapabilities/Events_IncludeRoot.ext"
 #endif
 #ifdef SUPPORT_PROPERTIES
-#include "Core/ClassCapabilities/Properties_IncludeRoot.hpp"
+#include "Core/ClassCapabilities/Properties_IncludeRoot.ext"
 #endif
 
 #undef SUPPORT_XML

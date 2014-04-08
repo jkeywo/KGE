@@ -83,7 +83,7 @@ public:
 #endif
 
 #ifdef SUPPORT_XML
-#include "Core/ClassCapabilities/XMLParser_Include.hpp"
+#include "Core/ClassCapabilities/XMLParser_Include.ext"
 #endif
 
 #undef SUPPORT_XML

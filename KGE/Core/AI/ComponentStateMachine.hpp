@@ -9,26 +9,26 @@ namespace KGE
 	class ComponentStateMachine : public ComponentComposite
 	{
 		METACLASS_CHILDDATA(ComponentStateMachine, ComponentComposite, "StateMachine")
-		#include "Core/Components/Component_Include.hpp"
+		#include "Core/Components/Component_Include.ext"
 		STATIC_INITIALISE_START
 		{
-			CLASSFACTORY_REGISTER_1ARG(ComponentContainer*);
-			CLASSFACTORY_REGISTERXML_1ARG(ComponentContainer*);
+			CLASSFACTORY_REGISTER_1ARG(TUID<KGE::Component>::CachedReference);
+			CLASSFACTORY_REGISTERXML_1ARG(TUID<KGE::Component>::CachedReference);
 			XMLPARSER_REGISTERATTRIBUTE("Initial", PopulateInitialState);
 			XMLPARSER_REGISTERCHILDNODE("State", PopulateState);
 		}
 		STATIC_INITIALISE_END
 
 	public:
-		ComponentStateMachine(ComponentContainer* pxParent)
-			: parent_t(pxParent)
+		ComponentStateMachine(TUID<Component>::CachedReference xParent)
+			: parent_t(xParent)
 			, m_xInitialState()
 			, m_pxCurrentState(NULL)
 		{
 			RegisterEvents();
 		}
-		ComponentStateMachine(xml_node<char>& xNode, ComponentContainer* pxParent)
-			: parent_t(xNode, pxParent)
+		ComponentStateMachine(xml_node<char>& xNode, TUID<Component>::CachedReference xParent)
+			: parent_t(xNode, xParent)
 			, m_xInitialState()
 			, m_pxCurrentState(NULL)
 		{
