@@ -7,9 +7,16 @@ namespace KGE
 	class Component;
 	class Hash;
 
+	/// 
+	/// KGE::Data
+	/// This wrapper class designed to store any type of data. To find the data types supported, please see the KGE::Data::DATA_TYPES enum values.
+	/// An instance of this class can only store one type of data, thus retrieving an int as a bool is NOT supported. the getters of this class
+	/// always return a pointer to the data, and if the requested type does not match the type of the stored data, NULL is returned.
+	///
 	class Data
 	{
 	public:
+		/// Data types that the class supports.
 		enum DATA_TYPES
 		{
 			UNSET = 0,
@@ -25,6 +32,7 @@ namespace KGE
 			WINDOW,
 			EVENT,
 		};
+
 		Data() : m_eType(UNSET) {}
 		Data(bool bValue) : m_eType(BOOL) { m_xProperty.b = bValue; }
 		Data(int iValue) : m_eType(INT) { m_xProperty.i = iValue; }
@@ -65,7 +73,10 @@ namespace KGE
 		template<> sf::Event* AsType<sf::Event>() { return AsEvent(); }
 		virtual DATA_TYPES GetType() const			{ return m_eType; }
 
+		/// Overloaded inequality operator: implemented in terms of the equality operator.
 		bool operator!=(const Data& xRHS) const;
+		/// Overloaded equality operator: returns false if both Data instances store different types or
+		// if one is of UNSET type.
 		bool operator==(const Data& xRHS) const;
 
 	protected:

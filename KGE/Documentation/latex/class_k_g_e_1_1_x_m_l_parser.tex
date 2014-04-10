@@ -1,0 +1,68 @@
+\hypertarget{class_k_g_e_1_1_x_m_l_parser}{\section{K\-G\-E\-:\-:X\-M\-L\-Parser$<$ this\-\_\-t $>$ Class Template Reference}
+\label{class_k_g_e_1_1_x_m_l_parser}\index{K\-G\-E\-::\-X\-M\-L\-Parser$<$ this\-\_\-t $>$@{K\-G\-E\-::\-X\-M\-L\-Parser$<$ this\-\_\-t $>$}}
+}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_k_g_e_1_1_x_m_l_parser_a2fdac7b18d10dbcce15098741030ed79}{typedef void(this\-\_\-t\-::$\ast$ {\bfseries Attribute\-Callback\-Fn\-Ptr} )(xml\-\_\-attribute$<$ char $>$ \&)}\label{class_k_g_e_1_1_x_m_l_parser_a2fdac7b18d10dbcce15098741030ed79}
+
+\item 
+\hypertarget{class_k_g_e_1_1_x_m_l_parser_a2052540602e1b0239dd28128cc64cee8}{typedef void(this\-\_\-t\-::$\ast$ {\bfseries Node\-Callback\-Fn\-Ptr} )(xml\-\_\-node$<$ char $>$ \&)}\label{class_k_g_e_1_1_x_m_l_parser_a2052540602e1b0239dd28128cc64cee8}
+
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_k_g_e_1_1_x_m_l_parser_a582546413cfe245053543f226db9d5bf}{void {\bfseries Register\-X\-M\-L\-Attribute} (\hyperlink{class_k_g_e_1_1_hash}{Hash} x\-Hash, Attribute\-Callback\-Fn\-Ptr px\-Handler)}\label{class_k_g_e_1_1_x_m_l_parser_a582546413cfe245053543f226db9d5bf}
+
+\item 
+\hypertarget{class_k_g_e_1_1_x_m_l_parser_ad97fd3ec90a7f3539d9d97d9dbb26380}{void {\bfseries Register\-X\-M\-L\-Child} (\hyperlink{class_k_g_e_1_1_hash}{Hash} x\-Hash, Node\-Callback\-Fn\-Ptr const px\-Handler)}\label{class_k_g_e_1_1_x_m_l_parser_ad97fd3ec90a7f3539d9d97d9dbb26380}
+
+\item 
+\hypertarget{class_k_g_e_1_1_x_m_l_parser_a50577da16bfde8d4d085e735d2f713d3}{void {\bfseries Process\-X\-M\-L\-Attributes} (const xml\-\_\-node$<$ char $>$ \&x\-Node, this\-\_\-t $\ast$px\-This) const }\label{class_k_g_e_1_1_x_m_l_parser_a50577da16bfde8d4d085e735d2f713d3}
+
+\item 
+\hypertarget{class_k_g_e_1_1_x_m_l_parser_ac5ea86ba238fae56ed22f5be4f7bdfb8}{void {\bfseries Process\-X\-M\-L\-Child\-Nodes} (const xml\-\_\-node$<$ char $>$ \&x\-Node, this\-\_\-t $\ast$px\-This) const }\label{class_k_g_e_1_1_x_m_l_parser_ac5ea86ba238fae56ed22f5be4f7bdfb8}
+
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_k_g_e_1_1_x_m_l_parser_a46ec27146e485e2ec398e2f3efb71160}{static \hyperlink{class_k_g_e_1_1_x_m_l_parser}{X\-M\-L\-Parser} \& {\bfseries Get} ()}\label{class_k_g_e_1_1_x_m_l_parser_a46ec27146e485e2ec398e2f3efb71160}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Types}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_k_g_e_1_1_x_m_l_parser_adb5323cb08c5f8b16be3f88fdd61c136}{typedef unordered\-\_\-map$<$ \hyperlink{class_k_g_e_1_1_hash}{Hash}, \\*
+Attribute\-Callback\-Fn\-Ptr, \\*
+\hyperlink{struct_k_g_e_1_1_hash_1_1_hasher}{Hash\-::\-Hasher} $>$ {\bfseries Attribute\-Collection}}\label{class_k_g_e_1_1_x_m_l_parser_adb5323cb08c5f8b16be3f88fdd61c136}
+
+\item 
+\hypertarget{class_k_g_e_1_1_x_m_l_parser_a5ea672c2ef8ef37b53cd43a43c482524}{typedef pair$<$ \hyperlink{class_k_g_e_1_1_hash}{Hash}, \\*
+Attribute\-Callback\-Fn\-Ptr $>$ {\bfseries Attribute\-Pair}}\label{class_k_g_e_1_1_x_m_l_parser_a5ea672c2ef8ef37b53cd43a43c482524}
+
+\item 
+\hypertarget{class_k_g_e_1_1_x_m_l_parser_a1db3e8f2907fe5ab9ebad5b2e2a1cb1d}{typedef unordered\-\_\-map$<$ \hyperlink{class_k_g_e_1_1_hash}{Hash}, \\*
+Node\-Callback\-Fn\-Ptr, \\*
+\hyperlink{struct_k_g_e_1_1_hash_1_1_hasher}{Hash\-::\-Hasher} $>$ {\bfseries Child\-Collection}}\label{class_k_g_e_1_1_x_m_l_parser_a1db3e8f2907fe5ab9ebad5b2e2a1cb1d}
+
+\item 
+\hypertarget{class_k_g_e_1_1_x_m_l_parser_ab376b2722a5630e44bf84597a853c51f}{typedef pair$<$ \hyperlink{class_k_g_e_1_1_hash}{Hash}, \\*
+Node\-Callback\-Fn\-Ptr $>$ {\bfseries Child\-Pair}}\label{class_k_g_e_1_1_x_m_l_parser_ab376b2722a5630e44bf84597a853c51f}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_k_g_e_1_1_x_m_l_parser_aa2d7ff6c80ffbc8559ff707d056720cb}{Attribute\-Collection {\bfseries m\-\_\-x\-Atributes}}\label{class_k_g_e_1_1_x_m_l_parser_aa2d7ff6c80ffbc8559ff707d056720cb}
+
+\item 
+\hypertarget{class_k_g_e_1_1_x_m_l_parser_a79fde2a76d5373cbfea6f2acd983fd25}{Child\-Collection {\bfseries m\-\_\-x\-Children}}\label{class_k_g_e_1_1_x_m_l_parser_a79fde2a76d5373cbfea6f2acd983fd25}
+
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+C\-:/\-Users/\-Vit/\-Documents/\-Git\-Hub/\-K\-G\-E/\-K\-G\-E/\-Core/\-Class\-Capabilities/X\-M\-L\-Parser.\-hpp\end{DoxyCompactItemize}

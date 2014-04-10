@@ -1,0 +1,132 @@
+\hypertarget{class_k_g_e_1_1_component}{\section{K\-G\-E\-:\-:Component Class Reference}
+\label{class_k_g_e_1_1_component}\index{K\-G\-E\-::\-Component@{K\-G\-E\-::\-Component}}
+}
+Inheritance diagram for K\-G\-E\-:\-:Component\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.303083cm]{class_k_g_e_1_1_component}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum {\bfseries State} \{ {\bfseries Unset}, 
+{\bfseries Active}, 
+{\bfseries Dormant}, 
+{\bfseries Destroyed}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_k_g_e_1_1_component_af85894a43348979804943c44095a6bc7}{{\bfseries Component} (\hyperlink{class_k_g_e_1_1_t_u_i_d}{T\-U\-I\-D}$<$ \hyperlink{class_k_g_e_1_1_component}{Component} $>$\-::Cached\-Reference x\-Parent)}\label{class_k_g_e_1_1_component_af85894a43348979804943c44095a6bc7}
+
+\item 
+\hypertarget{class_k_g_e_1_1_component_a33359d0c293e91dc1cd6445d11c09878}{{\bfseries Component} (xml\-\_\-node$<$ char $>$ \&x\-Node, \hyperlink{class_k_g_e_1_1_t_u_i_d}{T\-U\-I\-D}$<$ \hyperlink{class_k_g_e_1_1_component}{Component} $>$\-::Cached\-Reference x\-Parent)}\label{class_k_g_e_1_1_component_a33359d0c293e91dc1cd6445d11c09878}
+
+\item 
+\hypertarget{class_k_g_e_1_1_component_a3126cb2bd30ca80dbd4ce228aafc4072}{void {\bfseries On\-Event\-By\-Path} (const char $\ast$sz\-Path, eventparams\-\_\-t \&x\-Event\-Parameters)}\label{class_k_g_e_1_1_component_a3126cb2bd30ca80dbd4ce228aafc4072}
+
+\item 
+\hypertarget{class_k_g_e_1_1_component_a5667460ebc2a72c2b75d26e754926948}{\hyperlink{class_k_g_e_1_1_event}{Event}$<$ \hyperlink{class_k_g_e_1_1_component}{Component} $>$ $\ast$ {\bfseries Get\-Event\-By\-Path} (const char $\ast$sz\-Path)}\label{class_k_g_e_1_1_component_a5667460ebc2a72c2b75d26e754926948}
+
+\item 
+\hypertarget{class_k_g_e_1_1_component_af8a56a0f8035731eb8c54af5f1a1d50b}{\hyperlink{class_k_g_e_1_1_data}{Data} {\bfseries Get\-Property\-By\-Path} (const char $\ast$sz\-Path)}\label{class_k_g_e_1_1_component_af8a56a0f8035731eb8c54af5f1a1d50b}
+
+\item 
+\hypertarget{class_k_g_e_1_1_component_a8263ad0b576478b77eb0aa06eb3e0c82}{{\footnotesize template$<$class T\-Y\-P\-E\-\_\-\-T $>$ }\\T\-Y\-P\-E\-\_\-\-T $\ast$ {\bfseries Get\-Parent\-By\-Type} ()}\label{class_k_g_e_1_1_component_a8263ad0b576478b77eb0aa06eb3e0c82}
+
+\item 
+\hypertarget{class_k_g_e_1_1_component_ad20a2b1caaacf735fdd4dfc1332fbb08}{\hyperlink{class_k_g_e_1_1_component}{Component} $\ast$ {\bfseries Get\-Parent\-By\-Type} (const \hyperlink{class_k_g_e_1_1_hash}{Hash} \&x\-Type)}\label{class_k_g_e_1_1_component_ad20a2b1caaacf735fdd4dfc1332fbb08}
+
+\item 
+\hypertarget{class_k_g_e_1_1_component_a110fe64c4ae028a0d17f6c887be4753d}{\hyperlink{class_k_g_e_1_1_component}{Component} $\ast$ {\bfseries Get\-Parent\-By\-Name} (const \hyperlink{class_k_g_e_1_1_hash}{Hash} \&x\-Name)}\label{class_k_g_e_1_1_component_a110fe64c4ae028a0d17f6c887be4753d}
+
+\item 
+\hypertarget{class_k_g_e_1_1_component_ae97d8043655d44bf23efaf34ad07ac09}{virtual \hyperlink{class_k_g_e_1_1_component_updater}{Component\-Updater} $\ast$ {\bfseries Get\-Updater} ()}\label{class_k_g_e_1_1_component_ae97d8043655d44bf23efaf34ad07ac09}
+
+\item 
+\hypertarget{class_k_g_e_1_1_component_a85db1628f659dd44ef0933e4cbcdea78}{virtual \hyperlink{class_k_g_e_1_1_component_layer}{Component\-Layer} $\ast$ {\bfseries Get\-Layer} ()}\label{class_k_g_e_1_1_component_a85db1628f659dd44ef0933e4cbcdea78}
+
+\item 
+\hypertarget{class_k_g_e_1_1_component_a9c2c70f08da7fe7d0e94c4eee1ef2c37}{virtual float {\bfseries Get\-Priority} ()}\label{class_k_g_e_1_1_component_a9c2c70f08da7fe7d0e94c4eee1ef2c37}
+
+\item 
+\hypertarget{class_k_g_e_1_1_component_aaa31b2c83d8981fa4f7ba0bd2a496062}{const \hyperlink{class_k_g_e_1_1_hash}{Hash} \& {\bfseries Get\-Name} ()}\label{class_k_g_e_1_1_component_aaa31b2c83d8981fa4f7ba0bd2a496062}
+
+\item 
+\hypertarget{class_k_g_e_1_1_component_a08ef1943824c6ed24a1f022e5b70e03a}{State {\bfseries Get\-State} ()}\label{class_k_g_e_1_1_component_a08ef1943824c6ed24a1f022e5b70e03a}
+
+\item 
+\hypertarget{class_k_g_e_1_1_component_ae79e0c0cb5109749dd62e3f4bcac3dd2}{virtual bool {\bfseries Is\-Composite} () const }\label{class_k_g_e_1_1_component_ae79e0c0cb5109749dd62e3f4bcac3dd2}
+
+\item 
+\hypertarget{class_k_g_e_1_1_component_a7587279caf161378404ecaa0ed7582e4}{virtual bool {\bfseries Is\-Collection} () const }\label{class_k_g_e_1_1_component_a7587279caf161378404ecaa0ed7582e4}
+
+\item 
+\hypertarget{class_k_g_e_1_1_component_ad18fab646887afea15a21144ea59d5d4}{virtual void {\bfseries On\-Create} (eventparams\-\_\-t \&x\-Event\-Parameters)}\label{class_k_g_e_1_1_component_ad18fab646887afea15a21144ea59d5d4}
+
+\item 
+\hypertarget{class_k_g_e_1_1_component_a345806a8602e41e704691f22cfe01dcf}{virtual void {\bfseries On\-Activate} (eventparams\-\_\-t \&x\-Event\-Parameters)}\label{class_k_g_e_1_1_component_a345806a8602e41e704691f22cfe01dcf}
+
+\item 
+\hypertarget{class_k_g_e_1_1_component_a9c89319c75b7c01ff870019458f35e68}{virtual void {\bfseries On\-Deactivate} (eventparams\-\_\-t \&x\-Event\-Parameters)}\label{class_k_g_e_1_1_component_a9c89319c75b7c01ff870019458f35e68}
+
+\item 
+\hypertarget{class_k_g_e_1_1_component_a55fb5a2d3d18b32c06e5d09ede54e4a9}{virtual void {\bfseries On\-Destroy} (eventparams\-\_\-t \&x\-Event\-Parameters)}\label{class_k_g_e_1_1_component_a55fb5a2d3d18b32c06e5d09ede54e4a9}
+
+\item 
+\hypertarget{class_k_g_e_1_1_component_a465878aacc4cc7a260e87379a3803850}{virtual bool {\bfseries Handle\-Input} (sf\-::\-Event \&x\-Event, sf\-::\-Window $\ast$px\-Window)}\label{class_k_g_e_1_1_component_a465878aacc4cc7a260e87379a3803850}
+
+\item 
+\hypertarget{class_k_g_e_1_1_component_a4e038c491b68883684e135d4fa9431c4}{virtual void {\bfseries Render} (sf\-::\-Render\-Target \&x\-Target)}\label{class_k_g_e_1_1_component_a4e038c491b68883684e135d4fa9431c4}
+
+\item 
+\hypertarget{class_k_g_e_1_1_component_a07e34baf1f9fd29c92e08ded0ad5a798}{virtual void {\bfseries Update} (float f\-D\-T)}\label{class_k_g_e_1_1_component_a07e34baf1f9fd29c92e08ded0ad5a798}
+
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_k_g_e_1_1_component_afe843250d8c92a3f963af549e2bd449d}{static void {\bfseries Delete\-Destroyed} ()}\label{class_k_g_e_1_1_component_afe843250d8c92a3f963af549e2bd449d}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_k_g_e_1_1_component_a153f8e07328fc76e7306b6ab64bba4e9}{void {\bfseries Register\-Events} ()}\label{class_k_g_e_1_1_component_a153f8e07328fc76e7306b6ab64bba4e9}
+
+\item 
+\hypertarget{class_k_g_e_1_1_component_a402dd1c6164d2731555b19908bf210ab}{virtual void {\bfseries Process\-Name} (xml\-\_\-attribute$<$ char $>$ \&x\-Name)}\label{class_k_g_e_1_1_component_a402dd1c6164d2731555b19908bf210ab}
+
+\item 
+\hypertarget{class_k_g_e_1_1_component_aacb0aac1be9ddadadab53712d3079791}{virtual void {\bfseries Process\-Signal} (xml\-\_\-node$<$ char $>$ \&x\-Name)}\label{class_k_g_e_1_1_component_aacb0aac1be9ddadadab53712d3079791}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_k_g_e_1_1_component_ae406ae60a24d97f3c3627dbd64bc2996}{State {\bfseries m\-\_\-e\-State}}\label{class_k_g_e_1_1_component_ae406ae60a24d97f3c3627dbd64bc2996}
+
+\item 
+\hypertarget{class_k_g_e_1_1_component_a66359dc6ac2b450db0f11238d1531867}{\hyperlink{class_k_g_e_1_1_t_u_i_d}{T\-U\-I\-D}$<$ \hyperlink{class_k_g_e_1_1_component}{Component} $>$\-::Cached\-Reference {\bfseries m\-\_\-x\-Parent}}\label{class_k_g_e_1_1_component_a66359dc6ac2b450db0f11238d1531867}
+
+\item 
+\hypertarget{class_k_g_e_1_1_component_ad00caafcd6af78a11add9c14f89e1fb9}{xml\-\_\-node$<$ char $>$ $\ast$ {\bfseries m\-\_\-px\-X\-M\-L\-Node}}\label{class_k_g_e_1_1_component_ad00caafcd6af78a11add9c14f89e1fb9}
+
+\item 
+\hypertarget{class_k_g_e_1_1_component_a08ba9e5d1ee04c5ea4f770279f4c93a1}{\hyperlink{class_k_g_e_1_1_hash}{Hash} {\bfseries m\-\_\-x\-Name}}\label{class_k_g_e_1_1_component_a08ba9e5d1ee04c5ea4f770279f4c93a1}
+
+\end{DoxyCompactItemize}
+\subsection*{Static Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_k_g_e_1_1_component_ad5e3a3472239064723d799a37f4481e0}{static list$<$ \hyperlink{class_k_g_e_1_1_component}{Component} $\ast$ $>$ {\bfseries s\-\_\-x\-Destroyed\-Components}}\label{class_k_g_e_1_1_component_ad5e3a3472239064723d799a37f4481e0}
+
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+C\-:/\-Users/\-Vit/\-Documents/\-Git\-Hub/\-K\-G\-E/\-K\-G\-E/\-Core/\-Components/Component.\-hpp\item 
+C\-:/\-Users/\-Vit/\-Documents/\-Git\-Hub/\-K\-G\-E/\-K\-G\-E/\-Core/\-Components/Component.\-cpp\end{DoxyCompactItemize}

@@ -1,0 +1,76 @@
+\hypertarget{class_k_g_e_1_1_event_signal}{\section{K\-G\-E\-:\-:Event\-Signal$<$ owner\-\_\-t $>$ Class Template Reference}
+\label{class_k_g_e_1_1_event_signal}\index{K\-G\-E\-::\-Event\-Signal$<$ owner\-\_\-t $>$@{K\-G\-E\-::\-Event\-Signal$<$ owner\-\_\-t $>$}}
+}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{struct_k_g_e_1_1_event_signal_1_1_comparer}{Comparer}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_k_g_e_1_1_event_signal_a121dfd0a1f2cafd3bc803bbc3e3cacea}{{\bfseries Event\-Signal} (owner\-\_\-t \&x\-Owner)}\label{class_k_g_e_1_1_event_signal_a121dfd0a1f2cafd3bc803bbc3e3cacea}
+
+\item 
+\hypertarget{class_k_g_e_1_1_event_signal_a68e673396d68e99a4d0415cccfac5d82}{{\bfseries Event\-Signal} (xml\-\_\-node$<$ char $>$ \&x\-Node, owner\-\_\-t \&x\-Owner)}\label{class_k_g_e_1_1_event_signal_a68e673396d68e99a4d0415cccfac5d82}
+
+\item 
+\hypertarget{class_k_g_e_1_1_event_signal_a2f98b89b96d1e784dbd45d3c6dc5328f}{void {\bfseries Activate} ()}\label{class_k_g_e_1_1_event_signal_a2f98b89b96d1e784dbd45d3c6dc5328f}
+
+\item 
+\hypertarget{class_k_g_e_1_1_event_signal_a3bd5d17f63a0f2829fb9d6584bf548ce}{void {\bfseries Deactivate} ()}\label{class_k_g_e_1_1_event_signal_a3bd5d17f63a0f2829fb9d6584bf548ce}
+
+\item 
+\hypertarget{class_k_g_e_1_1_event_signal_a33ff8d1fc42a054923e763a2e7d3a334}{void {\bfseries Execute} (eventparams\-\_\-t \&x\-Params)}\label{class_k_g_e_1_1_event_signal_a33ff8d1fc42a054923e763a2e7d3a334}
+
+\item 
+\hypertarget{class_k_g_e_1_1_event_signal_aa654f733e993ec10a5541d9b61564101}{void {\bfseries Set\-Priority} (float f\-Priority)}\label{class_k_g_e_1_1_event_signal_aa654f733e993ec10a5541d9b61564101}
+
+\item 
+\hypertarget{class_k_g_e_1_1_event_signal_a9584569f24029b389e55c5e0feae1cda}{float {\bfseries Get\-Priority} () const }\label{class_k_g_e_1_1_event_signal_a9584569f24029b389e55c5e0feae1cda}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_k_g_e_1_1_event_signal_adf65006b13b9dbb167490670879c9669}{void {\bfseries Process\-Trigger} (xml\-\_\-attribute$<$ char $>$ \&x\-Event)}\label{class_k_g_e_1_1_event_signal_adf65006b13b9dbb167490670879c9669}
+
+\item 
+\hypertarget{class_k_g_e_1_1_event_signal_a8dbace77a099c11639225f133020af3d}{void {\bfseries Process\-Target} (xml\-\_\-attribute$<$ char $>$ \&x\-Event)}\label{class_k_g_e_1_1_event_signal_a8dbace77a099c11639225f133020af3d}
+
+\item 
+\hypertarget{class_k_g_e_1_1_event_signal_a54a97ca4837f3e2131ebf962d59d4002}{void {\bfseries Process\-Parameter} (xml\-\_\-node$<$ char $>$ \&x\-Parameter)}\label{class_k_g_e_1_1_event_signal_a54a97ca4837f3e2131ebf962d59d4002}
+
+\item 
+\hypertarget{class_k_g_e_1_1_event_signal_a055beb2edc99f655ed74dec80464d953}{void {\bfseries Process\-Priority} (xml\-\_\-attribute$<$ char $>$ \&x\-Priority)}\label{class_k_g_e_1_1_event_signal_a055beb2edc99f655ed74dec80464d953}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_k_g_e_1_1_event_signal_a40cc0e1308169ee30393e24636ea33c7}{owner\-\_\-t \& {\bfseries m\-\_\-x\-Owner}}\label{class_k_g_e_1_1_event_signal_a40cc0e1308169ee30393e24636ea33c7}
+
+\item 
+\hypertarget{class_k_g_e_1_1_event_signal_a24a350f8c112e8c578dc072e6a9054ca}{float {\bfseries m\-\_\-f\-Priority}}\label{class_k_g_e_1_1_event_signal_a24a350f8c112e8c578dc072e6a9054ca}
+
+\item 
+\hypertarget{class_k_g_e_1_1_event_signal_ae9ef131e2e10e146de7b72e2048424b2}{const char $\ast$ {\bfseries m\-\_\-sz\-Trigger\-Path}}\label{class_k_g_e_1_1_event_signal_ae9ef131e2e10e146de7b72e2048424b2}
+
+\item 
+\hypertarget{class_k_g_e_1_1_event_signal_a37e072a9c265912a8a602982440f128b}{\hyperlink{class_k_g_e_1_1_event}{Event}$<$ owner\-\_\-t $>$ $\ast$ {\bfseries m\-\_\-px\-Trigger\-Event}}\label{class_k_g_e_1_1_event_signal_a37e072a9c265912a8a602982440f128b}
+
+\item 
+\hypertarget{class_k_g_e_1_1_event_signal_a6732a2177dd72e19ed5222f4e7012392}{const char $\ast$ {\bfseries m\-\_\-sz\-Target\-Path}}\label{class_k_g_e_1_1_event_signal_a6732a2177dd72e19ed5222f4e7012392}
+
+\item 
+\hypertarget{class_k_g_e_1_1_event_signal_a717aff13f897a7acda5eeb59a5364d06}{\hyperlink{class_k_g_e_1_1_event}{Event}$<$ owner\-\_\-t $>$ $\ast$ {\bfseries m\-\_\-px\-Target\-Event}}\label{class_k_g_e_1_1_event_signal_a717aff13f897a7acda5eeb59a5364d06}
+
+\item 
+\hypertarget{class_k_g_e_1_1_event_signal_a4336b588f706964e78a4e54ad32a9165}{eventparams\-\_\-t {\bfseries m\-\_\-x\-Parameters}}\label{class_k_g_e_1_1_event_signal_a4336b588f706964e78a4e54ad32a9165}
+
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+C\-:/\-Users/\-Vit/\-Documents/\-Git\-Hub/\-K\-G\-E/\-K\-G\-E/\-Core/\-Class\-Capabilities/Event\-Signal.\-hpp\end{DoxyCompactItemize}

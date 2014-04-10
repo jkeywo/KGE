@@ -1,0 +1,55 @@
+\hypertarget{class_k_g_e_1_1_event}{\section{K\-G\-E\-:\-:Event$<$ owner\-\_\-t $>$ Class Template Reference}
+\label{class_k_g_e_1_1_event}\index{K\-G\-E\-::\-Event$<$ owner\-\_\-t $>$@{K\-G\-E\-::\-Event$<$ owner\-\_\-t $>$}}
+}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_k_g_e_1_1_event_abafaf93279c4dab788af267b02e56303}{typedef unordered\-\_\-map$<$ \hyperlink{class_k_g_e_1_1_hash}{Hash}, \\*
+\hyperlink{class_k_g_e_1_1_event}{Event}$<$ owner\-\_\-t $>$\\*
+ $\ast$, \hyperlink{struct_k_g_e_1_1_hash_1_1_hasher}{Hash\-::\-Hasher} $>$ {\bfseries collection\-\_\-t}}\label{class_k_g_e_1_1_event_abafaf93279c4dab788af267b02e56303}
+
+\item 
+\hypertarget{class_k_g_e_1_1_event_abe78630172ef261fcbc6b8fd04e996a8}{typedef pair$<$ \hyperlink{class_k_g_e_1_1_hash}{Hash}, \hyperlink{class_k_g_e_1_1_event}{Event}\\*
+$<$ owner\-\_\-t $>$ $\ast$ $>$ {\bfseries collectionpair\-\_\-t}}\label{class_k_g_e_1_1_event_abe78630172ef261fcbc6b8fd04e996a8}
+
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_k_g_e_1_1_event_a718fe1b0a1a4ff9768dea405485844ff}{{\bfseries Event} (const \hyperlink{class_k_g_e_1_1_hash}{Hash} \&x\-Hash, owner\-\_\-t \&x\-Caller, std\-::function$<$ void(eventparams\-\_\-t \&)$>$ x\-Callback)}\label{class_k_g_e_1_1_event_a718fe1b0a1a4ff9768dea405485844ff}
+
+\item 
+\hypertarget{class_k_g_e_1_1_event_a731391dcb56fc726f203ce2f0ce18d10}{void {\bfseries Register\-Signal} (\hyperlink{class_k_g_e_1_1_event_signal}{Event\-Signal}$<$ owner\-\_\-t $>$ $\ast$px\-Signal)}\label{class_k_g_e_1_1_event_a731391dcb56fc726f203ce2f0ce18d10}
+
+\item 
+\hypertarget{class_k_g_e_1_1_event_a7a62b2d97ffe3c87455160b257c2b116}{void {\bfseries Unregister\-Signal} (\hyperlink{class_k_g_e_1_1_event_signal}{Event\-Signal}$<$ owner\-\_\-t $>$ $\ast$px\-Signal)}\label{class_k_g_e_1_1_event_a7a62b2d97ffe3c87455160b257c2b116}
+
+\item 
+\hypertarget{class_k_g_e_1_1_event_a3e632d4e01b37e0f3c3fa404d73bb7fc}{void {\bfseries Execute} (eventparams\-\_\-t \&x\-Event\-Parameters)}\label{class_k_g_e_1_1_event_a3e632d4e01b37e0f3c3fa404d73bb7fc}
+
+\item 
+\hypertarget{class_k_g_e_1_1_event_a4f38ca1d86b9d319dd591eaf6cc2999a}{virtual const \hyperlink{class_k_g_e_1_1_hash}{Hash} \& {\bfseries Get\-Hash} () const }\label{class_k_g_e_1_1_event_a4f38ca1d86b9d319dd591eaf6cc2999a}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_k_g_e_1_1_event_a896140405a443b76b39503fc29adcd16}{\hyperlink{class_k_g_e_1_1_hash}{Hash} {\bfseries m\-\_\-x\-Hash}}\label{class_k_g_e_1_1_event_a896140405a443b76b39503fc29adcd16}
+
+\item 
+\hypertarget{class_k_g_e_1_1_event_a510003f7bed85cfdbca5400105576832}{owner\-\_\-t \& {\bfseries m\-\_\-x\-Caller}}\label{class_k_g_e_1_1_event_a510003f7bed85cfdbca5400105576832}
+
+\item 
+\hypertarget{class_k_g_e_1_1_event_ae0ecaf668869d285e28a5ecce70b634d}{std\-::function$<$ void(eventparams\-\_\-t \&)$>$ {\bfseries m\-\_\-x\-Callback}}\label{class_k_g_e_1_1_event_ae0ecaf668869d285e28a5ecce70b634d}
+
+\item 
+\hypertarget{class_k_g_e_1_1_event_a25cb534b76a8d499622660e332692800}{std\-::set$<$ \hyperlink{class_k_g_e_1_1_event_signal}{Event\-Signal}$<$ owner\-\_\-t $>$\\*
+ $\ast$, typename \hyperlink{class_k_g_e_1_1_event_signal}{Event\-Signal}\\*
+$<$ owner\-\_\-t $>$\-::Comparer $>$ {\bfseries m\-\_\-x\-Signals}}\label{class_k_g_e_1_1_event_a25cb534b76a8d499622660e332692800}
+
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+C\-:/\-Users/\-Vit/\-Documents/\-Git\-Hub/\-K\-G\-E/\-K\-G\-E/\-Core/\-Class\-Capabilities/Events.\-hpp\end{DoxyCompactItemize}
